@@ -37,59 +37,11 @@ function filter_list(arr) {
 cl(filter_list([1,2,'a','b']))
 
 
-function maxSequence(arr){
-	let max = Math.max.apply(null,arr),
-		sum = 0;
-	for(let i = 0; i<arr.length; i++){
-		if(sum < 0){
-			sum = arr[i]
-			continue;
-		}
-		sum += arr[i]
-		if(sum > max)
-			max = sum;
-	}
-	cl('666')
-	return (max>0)?max:0;
-}
-var maxSequence = function(arr){
-    var currentSum = 0;
-    return arr.reduce(function(maxSum, number){
-        currentSum = Math.max(currentSum+number, 0);
-        return Math.max(currentSum, maxSum);
-    }, 0);
-}
-cl(maxSequence([-2, 1, -3, 4, -1, 2, 1, -5, 4]))
 
 
-function PaginationHelper(collection, itemsPerPage){
-	this.collection = collection;
-	this.itemsPerPage = itemsPerPage;
-}
-PaginationHelper.prototype.itemCount = function() {
-	return this.collection.length;
-}
-PaginationHelper.prototype.pageCount = function() {
-	let divided = this.collection.length/this.itemsPerPage
-	return Math.ceil(divided)
-}
-PaginationHelper.prototype.pageItemCount = function(pageIndex) {
-	if(pageIndex < this.pageCount()-1)
-		return this.itemsPerPage;
-	else if(pageIndex === this.pageCount()-1)
-		return this.itemCount()%this.itemsPerPage
-	else 
-		return -1;
-}
-PaginationHelper.prototype.pageIndex = function(itemIndex) {
-	if(itemIndex < this.itemCount() && itemIndex>=0)
-		return Math.floor(itemIndex/this.itemsPerPage)
-	else
-		return -1;
-}
-var helper = new PaginationHelper(['a','b','c','d','e','f'], 4);
-cl(helper.pageCount());
-cl(helper.pageIndex(8))
+
+
+
 
 
 function separateLiquids(glass) {
