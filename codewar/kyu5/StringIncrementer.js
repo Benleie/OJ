@@ -1,5 +1,5 @@
 /**
- * 1.这道题应该用正则表达式来写，基本就是考察replace的使用
+ * 1. 这道题应该用正则表达式来写， 基本就是考察replace的使用，Specifying a function as a parameter.
  */
 const testStr = ["foo", "foobar23", "foo0042", "foo099", '009']
 
