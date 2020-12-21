@@ -2,10 +2,13 @@
  * @param {string} s
  * @return {boolean}
  */
+
+ 
 var isValid = function(s) {
   let stringArr = s.split('')
   let stackArr = [];
-  stringArr.forEach(value => {
+  
+  for(value of stringArr) {
     switch(value){
       case "(":
         stackArr.push(value)
@@ -17,17 +20,29 @@ var isValid = function(s) {
         stackArr.push(value)
         break
       case ")":
-        if(stackArr.pop() !== "(") return "h"
+        if(stackArr.pop() !== "(") return false
         break
       case "]":
-        if(stackArr.pop() !== '[') return 'hh'
+        if(stackArr.pop() !== '[') return false
         break
       case '}':
-        if(stringArr.pop() !== '}') return 'hhh'
+        if(stackArr.pop() !== '{') return false
         break
     }
-  })
-  console.log(stackArr)
+  }
   return !stackArr.length
 };
-console.log(isValid("([]"))
+
+console.log(isValid("(([]){})"))
+// console.log(isValid("([)])"))
+
+// 速度慢，内存占用高
+let isValid2 = (str) => {
+  str = str.replace(/\s*/g, '')
+  while(str.includes('()') || str.includes('[]') || str.includes('{}')) {
+    str = str.replace('()', '')
+    str = str.replace('[]', '')
+    str = str.replace('{}', '')
+  }
+  return str === ''
+}
