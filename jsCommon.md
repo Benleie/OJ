@@ -20,3 +20,20 @@
 + ES6: includes
 + `let newStr = str.replace()`
   + The original string is left unchanged.
+
+
+
+
+# ES6
+## 解构赋值
++ 将一个对象的部分属性赋值给另一个对象
+```js
+const data = {
+  id: "1",
+  name: 'Arya',
+  age: 13,
+  level: 12
+}
+let { id, name, level: rank } = data
+const data2 = { id, name, rank }
+```
