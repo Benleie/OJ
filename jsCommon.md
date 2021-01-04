@@ -20,6 +20,8 @@
 + ES6: includes
 + `let newStr = str.replace()`
   + The original string is left unchanged.
++ concat
+  + 强烈建议使用赋值操作符（+, +=）代替 concat 方法。
 
 
 
