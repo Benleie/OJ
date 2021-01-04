@@ -16,12 +16,17 @@
   + Return value: The removed element from the array; undefined if the array is empty.
 
 # String
-+ ES5: 
++ ES5: substring, slice
 + ES6: includes
 + `let newStr = str.replace()`
   + The original string is left unchanged.
++ str.substring(indexStart[, indexEnd])
+  + 如果任一参数小于0或为NaN，则被当作0。
++ str.slice(beginIndex[, endIndex])
+  + 如果值为负数，会被当做 strLength + beginIndex 看待，这里的strLength 是字符串的长度（例如， 如果beginIndex是-3则看作是：strLength - 3）
 + concat
   + 强烈建议使用赋值操作符（+, +=）代替 concat 方法。
++ 
 
 
 

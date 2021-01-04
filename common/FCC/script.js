@@ -1,4 +1,16 @@
 
+function titleCase(str) {
+  let strArr = []
+  for(let item of str.toLowerCase().split(' ')) {
+    strArr.push(item.charAt(0).toUpperCase() + item.substring(1))
+  }
+  return strArr.join(' ');
+}
+
+titleCase("I'm a little tea pot");
+console.log(titleCase("I'm a little tea pot")
+)
+/* 
 function booWho(bool) {
   return (bool === true || bool === false)
   ? true
@@ -6,6 +18,9 @@ function booWho(bool) {
 }
 
 booWho(null);
+console.log('abc')
+*/
+
 
 
 
