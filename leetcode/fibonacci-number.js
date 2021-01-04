@@ -21,7 +21,7 @@ var fib2 = function(n) {
   if(n > -1 && n < 2) {
     return n
   } else {
-    return fib2(n - 1) + fib2(n-2)
+    return fib2(n - 1) + fib2(n - 2)
   }
 }
 
@@ -39,3 +39,8 @@ var fibb = function(value) {
 }
 console.log(fib2(2))
 console.log(fibb(2))
+
+
+/* 
+** 动态规划入门
+*/
