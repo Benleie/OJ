@@ -116,6 +116,7 @@ factorialize(5);
 reverseString("hello"); */
 
 
+
 /* **********************************************************************  */
 
 
@@ -140,13 +141,50 @@ console.log(Boolean({}))
 bouncer([7, "ate", "", false, 9]); */
 
 
+/* 
+function getIndexToIns(arr, num) {
+  //从小到大进行排序
+  arr.sort((a, b) => {
+    if(a < b) {
+      return -2
+    }
+  })
+  for(let index in arr) {
+    if(arr[index] >= Math.ceil(num)) {
+      return Number(index)
+    }
+  }
+  return arr.length
+}
+
+getIndexToIns([40, 60], 50);
+// console.log(getIndexToIns([10, 20, 30, 40, 50], 35)) 
+*/
+
+/* 
+// 使用arr.includes()
+function mutation(arr) {
+  let sss = arr[0].toLowerCase().split('')
+  for(let item of arr[1].toLowerCase().split('')) {
+    if(!sss.includes(item))
+     return false
+  }
+  return true;
+}
+
+mutation(["hello", "hey"]);
+// console.log(mutation(["hello", "he"])) */
 
 
 
+function chunkArrayInGroups(arr, size) {
+  let returnArr = []
+  for(let start = 0; start < arr.length; start += size) {
+    returnArr.push(arr.slice(start, start + size))
+  }
+  return returnArr;
+}
 
-
-
-
-
-
+chunkArrayInGroups(["a", "b", "c", "d"], 2);
+console.log(chunkArrayInGroups(["a", "b", "c", "d"], 2))
 
