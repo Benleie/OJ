@@ -1,4 +1,7 @@
 
+
+
+/* 
 function titleCase(str) {
   let strArr = []
   for(let item of str.toLowerCase().split(' ')) {
@@ -8,8 +11,11 @@ function titleCase(str) {
 }
 
 titleCase("I'm a little tea pot");
-console.log(titleCase("I'm a little tea pot")
-)
+// console.log(titleCase("I'm a little tea pot"))
+*/
+
+
+
 /* 
 function booWho(bool) {
   return (bool === true || bool === false)
@@ -108,3 +114,39 @@ factorialize(5);
 }
 
 reverseString("hello"); */
+
+
+/* **********************************************************************  */
+
+
+/* 
+function frankenSplice(arr1, arr2, n) {
+  let arr = arr2.slice()
+  arr.splice(n, 0, ...arr1)
+  return arr;
+}
+
+frankenSplice([1, 2, 3], [4, 5, 6], 1);
+
+console.log(Boolean({})) 
+*/
+
+
+
+/* function bouncer(arr) {
+  return arr.filter(item => Boolean(item));
+}
+
+bouncer([7, "ate", "", false, 9]); */
+
+
+
+
+
+
+
+
+
+
+
+

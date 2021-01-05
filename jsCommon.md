@@ -14,6 +14,9 @@
   + 返回值：由被删除的元素组成的一个数组。如果只删除了一个元素，则返回只包含一个元素的数组。如果没有删除元素，则返回空数组。
 + array.pop()
   + Return value: The removed element from the array; undefined if the array is empty.
++ array.sort([compareFunction])
+  + 原地排序算法；默认将数组元素转化为字符串，按照编码序列时进行排序 
+  + 按照调用该函数的返回值排序
 
 # String
 + ES5: substring, slice
