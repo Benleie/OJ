@@ -48,7 +48,13 @@
   
 + 
 
-
+## 归纳
++ 数组浅拷贝的方法
+  ```
+  newArray = [...oldArr]
+  newArray = oldArr.slice()
+  newArray = oldArr.concat()
+  ```
 
 
 # ES6

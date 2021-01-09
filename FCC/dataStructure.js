@@ -177,6 +177,7 @@ mutation(["hello", "hey"]);
 
 
 
+/* 
 function chunkArrayInGroups(arr, size) {
   let returnArr = []
   for(let start = 0; start < arr.length; start += size) {
@@ -187,4 +188,20 @@ function chunkArrayInGroups(arr, size) {
 
 chunkArrayInGroups(["a", "b", "c", "d"], 2);
 console.log(chunkArrayInGroups(["a", "b", "c", "d"], 2))
+ */
 
+
+
+
+ /* ************* Basic Data Structures ***************** */
+
+let yourArray = ['sister', 3, true, undefined, null, [1, 2, 3]]
+let newArray
+newArray = [...yourArray]
+newArray = yourArray.slice()
+newArray = yourArray.concat()
+console.log(newArray)
+console.log(newArray.indexOf(4))
+console.log('-1')
+
+// 使用 spread operator拼接数组更灵活，更直观
