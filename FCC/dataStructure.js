@@ -271,3 +271,80 @@ function countOnline(usersObj) {
 }
 
 
+
+/*********************************** Data Structure *********************************************/  
+// typed-arrays
+
+// create-a-stack-class
+function Stack() {
+  var collection = [];
+  this.print = function() {
+    console.log(collection);
+  };
+  this.push = function(item) {
+    collection.push(item);
+  }
+  this.pop = () => {
+    return collection.pop()
+  }
+  this.peek = () => collection[collection.length - 1]
+  this.isEmpty = () => collection.length ? false : true
+  this.clear = () => collection = []
+  // Only change code below this line
+
+  // Only change code above this line
+}
+
+function Queue() {
+  var collection = [];
+  this.print = function() {
+    console.log(collection);
+  };
+  // Only change code below this line
+  this.enqueue = (item) => { collection.push(item)  }
+  this.dequeue = () => collection.shift() 
+  this.front = () => collection[0]
+  this.size = () => collection.length
+  this.isEmpty = () => collection.length ? false : true
+  // Only change code above this line
+}
+
+function PriorityQueue () {
+  this.collection = [];
+  this.printCollection = function() {
+    console.log(this.collection);
+  };
+  // Only change code below this line
+  this.enqueue = (item) => {
+    
+    // 将每个值按照从小到大的顺序插入有序数组
+    let isAdd = false
+    for(let i = 0; i < this.collection.length; i++) {
+      if(item[1] < this.collection[i][1]) {
+        this.collection.splice(i, 0, item);
+        isAdd = true
+        break;
+      }
+    }
+    // 如果优先级低于所有值，则在此处插入
+    if(!isAdd) {
+      this.collection.push(item)
+    }
+      
+  }
+  this.dequeue = () => this.collection.shift()[0] 
+  this.front = () => this.collection[0][0]
+  this.size = () => this.collection.length
+  this.isEmpty = () => this.collection.length ? false : true
+  // Only change code above this line
+}
+
+// let myPQ = new PriorityQueue()
+// myPQ.enqueue(['11', 11])
+// myPQ.enqueue(['1first', 1])
+// myPQ.printCollection()
+// // console.log(myPQ.dequeue())
+// console.log(myPQ.front())
+// console.log(myPQ.size())
+
+
