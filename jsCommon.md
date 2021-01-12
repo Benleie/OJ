@@ -49,11 +49,15 @@
 + 
 
 # Object
-+
++ Object.keys()
++ Object.values()
++ 
 
 
 
 ## Map and Set
+### Map
++ 拓展了Object,使得key并不限于字符串或者Symbol
 
 
 

@@ -348,3 +348,111 @@ function PriorityQueue () {
 // console.log(myPQ.size())
 
 
+class Set1 {
+  constructor() {
+    // Dictionary will hold the items of our set
+    this.dictionary = {};
+    this.length = 0;
+  }
+
+  // This method will check for the presence of an element and return true or false
+  has(element) {
+    return this.dictionary[element] !== undefined;
+  }
+
+  console() {
+    console.log(this.dictionary)
+  }
+
+  // This method will return all the values in the set
+  values() {
+    return Object.values(this.dictionary);
+  }
+
+  // Only change code below this line
+  add(element) {
+    if(this.dictionary[element]) {
+      return false
+    } else {
+      this.dictionary[element] = element;
+      return true;
+    }
+  }
+
+  remove(element) {
+    if(this.dictionary[element]) {
+      delete this.dictionary[element];
+      return true;
+    } else {
+      return false;
+    }
+  }
+  // Only change code above this line
+  size() {
+    return Object.keys(this.dictionary).length
+  }
+}
+
+// let mySet = new Set()
+// mySet.add(2)
+// mySet.add(3)
+// mySet.console()
+
+
+// perform-a-union-on-two-sets
+class Set {
+  constructor() {
+    // This will hold the set
+    this.dictionary = {};
+    this.length = 0;
+  }
+  // This method will check for the presence of an element and return true or false
+  has(element) {
+    return this.dictionary[element] !== undefined;
+  }
+  // This method will return all the values in the set
+  values() {
+    return Object.keys(this.dictionary);
+  }
+  // This method will add an element to the set
+  add(element) {
+    if (!this.has(element)) {
+      this.dictionary[element] = true;
+      this.length++;
+      return true;
+    }
+    return false;
+  }
+  // This method will remove an element from a set
+  remove(element) {
+    if (this.has(element)) {
+      delete this.dictionary[element];
+      this.length--;
+      return true;
+    }
+    return false;
+  }
+  // This method will return the size of the set
+  size() {
+    return this.length;
+  }
+  // params: Set, return: Set
+  union(set) {
+    const newSet = new Set();
+    this.values().forEach(item => {
+      newSet.add(item)
+    })
+    set.values().forEach(item => {
+      newSet.add(item)
+    })
+    return newSet
+    
+  }
+  // Only change code above this line
+}
+
+let mySet = new Set()
+mySet.add(2)
+// console.log(mySet.union([1,2]))
+// console.log(mySet)
+// mySet.console()
