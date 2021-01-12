@@ -193,8 +193,9 @@ console.log(chunkArrayInGroups(["a", "b", "c", "d"], 2))
 
 
 
- /* ************* Basic Data Structures ***************** */
+/* *************************** Basic Data Structures **************************** */
 
+/* 
 let yourArray = ['sister', 3, true, undefined, null, [1, 2, 3]]
 let newArray
 newArray = [...yourArray]
@@ -203,5 +204,70 @@ newArray = yourArray.concat()
 console.log(newArray)
 console.log(newArray.indexOf(4))
 console.log('-1')
-
 // 使用 spread operator拼接数组更灵活，更直观
+*/
+
+
+function filteredArray(arr, elem) {
+  let newArr = [];
+  // Only change code below this line
+  for(let item of arr) {
+    if(item.indexOf(elem) === -1) {
+      newArr.push(item)
+    }
+  }
+  // Only change code above this line
+  return newArr;
+}
+filteredArray([[10, 8, 3], [14, 6, 23], [3, 18, 6]], 18)
+
+// delete obj.prop
+
+let users = {
+  Alan: {
+    age: 27,
+    online: true
+  },
+  Jeff: {
+    age: 32,
+    online: true
+  },
+  Sarah: {
+    age: 48,
+    online: true
+  },
+  Ryan: {
+    age: 19,
+    online: true
+  }
+};
+
+function isEveryoneHere(obj) {
+  // Only change code below this line
+  const names = ['Alan', 'Jeff', 'Sarah', 'Ryan' ]
+  for(let item of names) {
+    if(!(item in obj)) {
+      return false
+    }
+  }
+  return true
+  // Only change code above this line
+}
+
+delete users.Jeff
+// console.log(isEveryoneHere(users));
+
+
+function countOnline(usersObj) {
+  // Only change code below this line
+  let count = 0;
+  for (let key in usersObj) {
+    if(usersObj[key].online) {
+      count ++
+    }
+  }
+  return count
+  // Only change code above this line
+}
+
+

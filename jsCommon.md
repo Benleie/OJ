@@ -48,6 +48,21 @@
   
 + 
 
+# Object
++
+
+
+
+## Map and Set
+
+
+
+## code
+```js
+ users.hasOwnProperty('Alan');
+'Alan' in users;
+// both return true
+```
 ## 归纳
 + 数组浅拷贝的方法
   ```
@@ -55,6 +70,9 @@
   newArray = oldArr.slice()
   newArray = oldArr.concat()
   ```
++ 遍历对象属性
+  + for ... in
+  + Object.keys(obj)
 
 
 # ES6

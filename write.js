@@ -32,4 +32,17 @@ let arrNew = [
   }
 ]
 arr.push(...arrNew)
-console.log(arr)
+// console.log(arr)
+let obj = {
+  "id": "1344496809445212162",
+  "houseId": "2-1340927832976343041-1340927833269944321-1-2-3",
+  "path": "府山一区-1号楼-1单元102",
+  "userName": "宁成",
+  "checkStatus": "0",
+  "type": "2",
+  "createTime": "2020-12-31 12:13:13"
+}
+for(let key in obj) {
+  console.log(key)
+}
+console.log(Object.keys(obj))
