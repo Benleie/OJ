@@ -446,13 +446,39 @@ class Set {
       newSet.add(item)
     })
     return newSet
-    
   }
+  intersection(set) {
+    const newSet = new Set();
+    this.values().forEach(item => {
+      if(set.values().indexOf(item) !== -1) {
+        newSet.add(item)
+      }
+    })
+    return newSet
+  }
+
+  difference(set) {
+    const newSet = new Set();
+    const interSet = this.intersection(set)
+    this.values().forEach(item => {
+      if(!interSet.dictionary[item]) {
+        
+      }
+    })
+  }
+
   // Only change code above this line
 }
 
 let mySet = new Set()
+let mySet2 = new Set()
+mySet2.add(1)
+mySet2.add(2)
 mySet.add(2)
+mySet.add(3)
+mySet.add(4)
+mySet.add(5)
+console.log(mySet.intersection(mySet2))
 // console.log(mySet.union([1,2]))
-// console.log(mySet)
+console.log(mySet)
 // mySet.console()

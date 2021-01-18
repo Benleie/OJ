@@ -2,6 +2,7 @@
 + https://github.com/azl397985856/leetcode
 + [lucify整理的简单算法题](https://leetcode-solution-leetcode-pp.gitbook.io/leetcode-solution/easy)
 + [王达 编程起跑线](https://wdxtub.com/categories/%E7%BC%96%E7%A8%8B%E8%B5%B7%E8%B7%91%E7%BA%BF/)
+
 ## commit提交规范
 日志信息以`<type>`开头，用于说明commit的类别，type使用下面标识。
 + feat: 新做题目
