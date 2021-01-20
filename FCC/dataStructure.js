@@ -498,8 +498,17 @@ mySet.add(2)
 mySet.add(3)
 mySet.add(4)
 mySet.add(5)
-console.log(mySet.difference(mySet2))
+// console.log(mySet.difference(mySet2))
 // console.log(mySet.union([1,2]))
-console.log(mySet2.isSubsetOf(mySet))
+// console.log(mySet2.isSubsetOf(mySet))
 // mySet.console()
 
+function checkSet(arrToBeSet, checkValue){
+  // Only change code below this line
+  let set = new Set(arrToBeSet)
+  let arr = []
+  arr.push(set.has(checkValue))
+  arr.push(set.size)
+  return arr
+  // Only change code above this line
+}
