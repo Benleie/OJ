@@ -457,13 +457,32 @@ class Set {
     return newSet
   }
 
+  // 注意不是完全意义上的差集
   difference(set) {
     const newSet = new Set();
     const interSet = this.intersection(set)
+    // set.values().forEach(item => {
+    //   if(!interSet.dictionary[item]) {
+    //     newSet.add(item)
+    //   }
+    // })
     this.values().forEach(item => {
       if(!interSet.dictionary[item]) {
-        
+        newSet.add(item)
       }
+    })
+    return newSet
+  }
+
+  isSubsetOf(set) {
+    // for(let item of Object.keys(this.dictionary)) {
+    //   if(!set.dictionary[item]) {
+    //     return false
+    //   }
+    // }
+    // return true
+    return Object.keys(this.dictionary).every(item => {
+      return set.dictionary[item]
     })
   }
 
@@ -472,13 +491,15 @@ class Set {
 
 let mySet = new Set()
 let mySet2 = new Set()
-mySet2.add(1)
+// mySet2.add(1)
 mySet2.add(2)
+
 mySet.add(2)
 mySet.add(3)
 mySet.add(4)
 mySet.add(5)
-console.log(mySet.intersection(mySet2))
+console.log(mySet.difference(mySet2))
 // console.log(mySet.union([1,2]))
-console.log(mySet)
+console.log(mySet2.isSubsetOf(mySet))
 // mySet.console()
+
