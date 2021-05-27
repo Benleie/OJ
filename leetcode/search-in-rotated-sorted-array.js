@@ -16,12 +16,15 @@ var search = function(nums, target) {
   return -1
 };
 
-let arr = [0, 1, 2, 3, 4, 5, 6]
+let arr = [0, 1, 2, 3, 3, 3, 3, 3, 3, 3, 4, 5, 6]
 // console.log(search(arr, 2))
 
 let binarySearch = function(nums, target) {
+  if(!target || !nums.length) 
+    return 'please input valid params'
+
   let left = 0,
-      right = nums.length - 1
+      right = nums.length
   while(left <= right) {
     let mid = Math.floor((left + right) / 2)
     if(nums[mid] === target)
@@ -33,4 +36,24 @@ let binarySearch = function(nums, target) {
   }
   return -1
 }
-console.log(binarySearch(arr, 3))
+let leftBound = function(nums, target) {
+  if(!target || !nums.length) 
+    return 'please input valid params'
+
+  let left = 0,
+      right = nums.length
+  while(left < right) {
+    let mid = Math.floor((left + right) / 2)
+    if(nums[mid] >= target)
+      right = mid
+    else if(nums[mid] < target)
+      left = mid + 1
+    // else if(nums[mid] > target)
+    //   right = mid
+  }
+  // console.log(target)
+  return nums[left] == target ? left : -1
+}
+
+console.log(leftBound([0,1,1,2,2,3,3], 1))
+console.log(binarySearch([0,1,2,3,4,5], 3))
