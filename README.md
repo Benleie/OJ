@@ -1,7 +1,4 @@
-# OJ
-+ https://github.com/azl397985856/leetcode
-+ [lucify整理的简单算法题](https://leetcode-solution-leetcode-pp.gitbook.io/leetcode-solution/easy)
-+ [王达 编程起跑线](https://wdxtub.com/categories/%E7%BC%96%E7%A8%8B%E8%B5%B7%E8%B7%91%E7%BA%BF/)
+
 
 ## commit提交规范
 日志信息以`<type>`开头，用于说明commit的类别，type使用下面标识。
@@ -34,3 +31,8 @@
   + 能把一个硬记层次的人带到理解层次
 
 ### LeetCode做完多少题，已经不是一个指标了；更关键的是，一个人“理解”了多少题。
+
+## 资源 OJ
++ https://github.com/azl397985856/leetcode
++ [lucify整理的简单算法题](https://leetcode-solution-leetcode-pp.gitbook.io/leetcode-solution/easy)
++ [王达 编程起跑线](https://wdxtub.com/categories/%E7%BC%96%E7%A8%8B%E8%B5%B7%E8%B7%91%E7%BA%BF/)
