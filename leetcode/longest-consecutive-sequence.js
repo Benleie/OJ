@@ -32,7 +32,6 @@ var longestConsecutive = (nums) => {
       max = Math.max(max, currLen)
     }
   }
-  console.log(map)
   return max
 }
 
