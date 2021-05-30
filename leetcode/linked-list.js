@@ -222,12 +222,39 @@ var hasCycle = function(head) {
     return false
 };
 
+// 19: https://leetcode-cn.com/problems/remove-nth-node-from-end-of-list/
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val, next) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.next = (next===undefined ? null : next)
+ * }
+ */
+/**
+ * @param {ListNode} head
+ * @param {number} n
+ * @return {ListNode}
+ */
+var removeNthFromEnd = function(head, n) {
+  let dummy = new ListNode(0, head)
+  let curr = dummy
+  let length = 0
+  while(head) {
+    head = head.next
+    length++
+  }
+  for(let i = 0; i < length - n; i++) {
+    console.log(i)
+    curr = curr.next
+  }
+  curr.next = curr.next.next
+  return dummy.next
+};
+
 const linkedList1 = new LinkedList();
 linkedList1.append(1);
+linkedList1.append(2);
 linkedList1.append(3);
 linkedList1.append(4);
-const linkedList2 = new LinkedList();
-linkedList2.append(1);
-linkedList2.append(3);
-linkedList2.append(4);
+console.log(removeNthFromEnd(linkedList1.head, 3))
 // console.log(linkedList1.head)
