@@ -1,4 +1,4 @@
-// 121: https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock/
+// 121: best-time-to-buy-and-sell-stock
 /**
  * @param {number[]} prices
  * @return {number}
@@ -26,3 +26,23 @@ var maxProfit = function(prices) {
   }
   return max
 }
+
+
+//122 best-time-to-buy-and-sell-stock-ii
+// 只要价格低于后一天就买，高于后一天就买
+var maxProfit = function(prices) {
+  let profit = 0;
+  let buyPrice = -1;
+  for(let i = 0; i < prices.length; i++) {
+    if(buyPrice === -1) {
+      if(prices[i] < prices[i + 1]) 
+        buyPrice = prices[i]
+    }
+    else if(!prices[i + 1] || prices[i] > prices[i + 1]) {
+      profit += prices[i] - buyPrice
+      buyPrice = -1
+    } 
+  }
+  return profit
+}
+console.log(maxProfit([2,1,2,0,1]))
