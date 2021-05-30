@@ -300,7 +300,7 @@ var isPalindrome = function(head) {
  * @param {ListNode} head
  * @return {ListNode}
  */
-var deleteDuplicates1 = function(head) {
+var deleteDuplicates = function(head) {
   const newNode = new ListNode(-1)
   let curr = newNode
   let map = new Map()
@@ -313,6 +313,18 @@ var deleteDuplicates1 = function(head) {
     head = head.next
   }
   return newNode.next
+};
+var deleteDuplicates = function(head) {
+  if(!head) return head
+  let curr = head
+  while(curr.next) {
+    if(curr.val === curr.next.val) {
+      curr.next = curr.next.next
+    } else {
+      curr = curr.next
+    }
+  }
+  return head
 };
 
 
@@ -330,29 +342,43 @@ var deleteDuplicates1 = function(head) {
  */
 var deleteDuplicates = function(head) {
   const newNode = new ListNode(-1, head)
-  let curr = head
-  let prev = null
-  while(curr) {
-    if(curr.val !== curr.next.val) {
-      newNode.next = curr
+  let curr = newNode
+  var isDup = false
+  while(head) {
+    // 保留当前项，继续与下一项对比
+    if(head.val === head.next.val) {
+      isDup = true
     } else {
-      prev = curr.next
+      if(isDup) {
+        isDup = false
+        console.log('false')
+        console.log(head)
+      } else {
+        console.log('put')
+        curr.next = head
+        curr = curr.next
+      }
     }
-    curr = curr.next
+    head = head.next
+    
   }
+  return newNode.next
 };
-var deleteDuplicates = function(head) {
-  if(!head) return head
-  let curr = head
-  while(curr.next) {
-    if(curr.val === curr.next.val) {
-      curr.next = curr.next.next
-    } else {
-      curr = curr.next
-    }
-  }
-  return head
-};
+
 const linkedList1 = new LinkedList();
-[1,1,2,2,3, 3].forEach(value => linkedList1.append(value))
+[0,1,1,2,2,2,3, 3,4].forEach(value => linkedList1.append(value))
 console.log(deleteDuplicates(linkedList1.head).toArray())
+
+/* let arrEmpty = []
+let arr33 = [0,1,1,2,2,2,3,4,4,5]
+var isDup = false
+for (let i = 0; i < arr33.length; i++) {
+  if(arr33[i] === arr33[i + 1]) 
+    isDup = true
+  else {
+    if(isDup) isDup = !isDup
+    else arrEmpty.push(arr33[i])
+  }
+}
+console.log(arrEmpty)
+ */
