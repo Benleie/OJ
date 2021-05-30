@@ -251,13 +251,7 @@ var removeNthFromEnd = function(head, n) {
   return dummy.next
 };
 
-const linkedList1 = new LinkedList();
-linkedList1.append(1);
-linkedList1.append(2);
-linkedList1.append(3);
-linkedList1.append(4);
-console.log(removeNthFromEnd(linkedList1.head, 3))
-// console.log(linkedList1.head)
+
 
 
 // 234: https://leetcode-cn.com/problems/palindrome-linked-list/
@@ -284,3 +278,40 @@ var isPalindrome = function(head) {
   }
   return true
 };
+
+// 83: https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list/
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val, next) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.next = (next===undefined ? null : next)
+ * }
+ */
+/**
+ * @param {ListNode} head
+ * @return {ListNode}
+ */
+var deleteDuplicates = function(head) {
+  const newNode = new ListNode(-1)
+  let curr = newNode
+  let map = new Map()
+  while(head) {
+    if(!map.has(head.val)) {
+      map.set(head.val, true)
+      curr.next = head
+      curr = curr.next
+    } else curr.next = null
+    head = head.next
+  }
+  return newNode.next
+};
+
+const linkedList1 = new LinkedList();
+linkedList1.append(1);
+linkedList1.append(1);
+linkedList1.append(2);
+linkedList1.append(2);
+// linkedList1.append(4);
+
+console.log(deleteDuplicates(linkedList1.head))
+// console.log(linkedList1.head)
