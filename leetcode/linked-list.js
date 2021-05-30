@@ -7,6 +7,15 @@ class ListNode {
   toString(callback) {
     return callback ? callback(this.val) : `${this.val}`;
   }
+  toArray() {
+    let arr = []
+    let that = this
+    while(that) {
+      arr.push(that.val)
+      that = that.next
+    }
+    return arr
+  }
 }
 // console.log(new LinkedListNode(2))
 class LinkedList {
@@ -291,7 +300,7 @@ var isPalindrome = function(head) {
  * @param {ListNode} head
  * @return {ListNode}
  */
-var deleteDuplicates = function(head) {
+var deleteDuplicates1 = function(head) {
   const newNode = new ListNode(-1)
   let curr = newNode
   let map = new Map()
@@ -306,12 +315,44 @@ var deleteDuplicates = function(head) {
   return newNode.next
 };
 
-const linkedList1 = new LinkedList();
-linkedList1.append(1);
-linkedList1.append(1);
-linkedList1.append(2);
-linkedList1.append(2);
-// linkedList1.append(4);
 
-console.log(deleteDuplicates(linkedList1.head))
-// console.log(linkedList1.head)
+// 82; https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list-ii/
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val, next) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.next = (next===undefined ? null : next)
+ * }
+ */
+/**
+ * @param {ListNode} head
+ * @return {ListNode}
+ */
+var deleteDuplicates = function(head) {
+  const newNode = new ListNode(-1, head)
+  let curr = head
+  let prev = null
+  while(curr) {
+    if(curr.val !== curr.next.val) {
+      newNode.next = curr
+    } else {
+      prev = curr.next
+    }
+    curr = curr.next
+  }
+};
+var deleteDuplicates = function(head) {
+  if(!head) return head
+  let curr = head
+  while(curr.next) {
+    if(curr.val === curr.next.val) {
+      curr.next = curr.next.next
+    } else {
+      curr = curr.next
+    }
+  }
+  return head
+};
+const linkedList1 = new LinkedList();
+[1,1,2,2,3, 3].forEach(value => linkedList1.append(value))
+console.log(deleteDuplicates(linkedList1.head).toArray())
