@@ -59,5 +59,16 @@ var reverseString = function(s) {
  * @return {number}
  */
 var lengthOfLongestSubstring = function(s) {
-
+  let map = new Map()
+  let max = 0
+  let left = 0
+  for(let i = 0; i < s.length; i++) {
+    if(map.has(s[i])) {
+      left = Math.max(left, map.get(s[i]))
+    }
+    map.set(s[i], i + 1)
+    max = Math.max(max, i + 1 - left)
+  }
+  return max
 };
+console.log(lengthOfLongestSubstring('aabcabcda'))
