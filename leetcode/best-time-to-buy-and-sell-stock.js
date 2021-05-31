@@ -45,4 +45,6 @@ var maxProfit = function(prices) {
   }
   return profit
 }
-console.log(maxProfit([2,1,2,0,1]))
+// console.log(maxProfit([2,1,2,0,1]))
+
+
