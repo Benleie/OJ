@@ -24,13 +24,30 @@ var moveZeroes = function(nums) {
     if(!nums[i]) {
       nums.splice(i,1)
       nums.push(0)
-       
+       // i--
       // console.log(nums)
       console.log(i)
     }
   }
   console.log(nums)
 };
+
+// 双指针的办法，与其说是把0移动到数组尾部，不如说是把非零元素移动到头部
+var moveZeroes = function(nums) {
+  let left = 0; 
+  let right = 0;
+  while(right < nums.length) {
+    if(nums[right]) {
+      const temp = nums[right]
+      nums[right] = nums[left]
+      nums[left] = temp
+      left++
+    }
+    right++
+  }
+}
+
+
 let arr3 = [0,1,2,3,4]
 moveZeroes([0,0,1])
 
