@@ -58,7 +58,21 @@
 ## Map and Set
 ### Map
 + 拓展了Object,使得key并不限于字符串或者Symbol
-
+```js
+let map = new Map()
+map.has(a)
+map.get(a)
+map.set(a, true)
+```
+### Set
+```js
+let set = new Set()
+set.size
+set.add(1)
+set.add(2)
+set.delete(1)
+set.clear()
+```
 
 
 ## code

@@ -53,3 +53,11 @@ var reverseString = function(s) {
   }
 };
 
+/**
+ * longest-substring-without-repeating-characters
+ * @param {string} s
+ * @return {number}
+ */
+var lengthOfLongestSubstring = function(s) {
+
+};
