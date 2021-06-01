@@ -129,5 +129,35 @@ var strStr = function(haystack, needle) {
   }
   return -1
 };
-console.log(strStr('aaabaaabbbabaa', 'babb'))
+// console.log(strStr('aaabaaabbbabaa', 'babb'))
 
+/**
+ * 11: container-with-most-water
+ * @param {number[]} height
+ * @return {number}
+ */
+var maxArea = function(height) {
+  let max = 0;
+  for(let i = 0; i < height.length; i++) {
+    for(let j = i + 1; j < height.length; j++) {
+      const area = (j - i) * Math.min(height[j], height[i]) 
+      if(area > max) {
+        console.log(`i = ${i},  j = ${j}`)
+        max = area
+      }
+    }
+  }
+  return max
+};
+var maxArea = function(height) {
+  let max = 0;
+  let left = 0;
+  let right = height.length - 1
+  while(left < right) {
+    const area = (right - left) * Math.min(height[left], height[right])
+    if(area > max) max = area
+    height[left] > height[right] ? right-- : left++
+  }
+  return max
+};
+// console.log(maxArea([1,8,6,2,5,4,8,3,7]))
