@@ -71,4 +71,37 @@ var lengthOfLongestSubstring = function(s) {
   }
   return max
 };
-console.log(lengthOfLongestSubstring('aabcabcda'))
+// console.log(lengthOfLongestSubstring('aabcabcda'))
+
+
+
+/**
+ * implement-strstr
+ * @param {string} haystack
+ * @param {string} needle
+ * @return {number}
+ */
+var strStr = function(haystack, needle) {
+
+};
+
+
+/**
+ * 27：remove-element
+ * @param {number[]} nums
+ * @param {number} val
+ * @return {number}
+ */
+// 把有效的数值排到数组前面，然后删掉后面的无效部分即可
+var removeElement = function(nums, val) {
+  let index = 0
+  for(let i = 0; i < nums.length; i++) {
+    if(nums[i] !==val) {
+      nums[index++] = nums[i]
+    }
+  }
+  nums.splice(index)
+  return nums.length
+};
+removeElement([0,1,2,2,3],2)
+console.log([0,1,2].splice(1))
