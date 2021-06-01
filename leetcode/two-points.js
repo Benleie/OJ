@@ -104,4 +104,30 @@ var removeElement = function(nums, val) {
   return nums.length
 };
 removeElement([0,1,2,2,3],2)
-console.log([0,1,2].splice(1))
+// console.log([0,1,2].splice(1))
+
+
+/**
+ * 28：implement-strstr
+ * @param {string} haystack
+ * @param {string} needle
+ * @return {number}
+ */
+var strStr = function(haystack, needle) {
+  if(!needle.length) return 0
+  let j = 1
+  for(let i = 0; i < haystack.length; i++) {
+    if(haystack[i] === needle[0]) {
+      for(j; j < needle.length; j++){
+        if(haystack[i + j] !== needle[j]) {
+          j = 1
+          break
+        }
+      }
+      if(j === needle.length) return i
+    }
+  }
+  return -1
+};
+console.log(strStr('aaabaaabbbabaa', 'babb'))
+
