@@ -365,9 +365,27 @@ var deleteDuplicates = function(head) {
   return newNode.next
 };
 
+/**
+ * @param {ListNode} head
+ * @param {number} val
+ * @return {ListNode}
+ */
+var removeElements = function(head, val) {
+  let dummy = new ListNode(-1, head)
+  let curr = dummy
+  while(curr && curr.next) {
+      if(curr.next.val === val) {
+          curr.next = curr.next.next
+      } else
+        curr = curr.next
+  }
+  return dummy.next
+};
+
+
 const linkedList1 = new LinkedList();
 [0,1,1,2,2,2,3, 3,4].forEach(value => linkedList1.append(value))
-console.log(deleteDuplicates(linkedList1.head).toArray())
+console.log(removeElements(linkedList1.head, 4).toArray())
 
 /* let arrEmpty = []
 let arr33 = [0,1,1,2,2,2,3,4,4,5]
@@ -382,3 +400,25 @@ for (let i = 0; i < arr33.length; i++) {
 }
 console.log(arrEmpty)
  */
+
+
+ // https://leetcode-cn.com/problems/intersection-of-two-linked-lists/submissions/
+ /**
+ * @param {ListNode} headA
+ * @param {ListNode} headB
+ * @return {ListNode}
+ */
+var getIntersectionNode = function(headA, headB) {
+  let set = new Set()
+  while(headA) {
+      set.add(headA)
+      headA = headA.next
+  }
+  while(headB) {
+      if(set.has(headB)) {
+          return headB
+      }
+      headB = headB.next
+  }
+  return null
+};
