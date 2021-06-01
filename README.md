@@ -7,10 +7,7 @@
 + improve：对已做题目的题解进行改进
 + doc：整理题目，整理知识
 
-## 题目列表
-+ 1 two-sum
-+ 20 valid-parentheses
-+ 
+
 
 
 ## 大V理解的刷题四个境界
