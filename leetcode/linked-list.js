@@ -383,9 +383,7 @@ var removeElements = function(head, val) {
 };
 
 
-const linkedList1 = new LinkedList();
-[0,1,1,2,2,2,3, 3,4].forEach(value => linkedList1.append(value))
-console.log(removeElements(linkedList1.head, 4).toArray())
+
 
 /* let arrEmpty = []
 let arr33 = [0,1,1,2,2,2,3,4,4,5]
@@ -422,3 +420,45 @@ var getIntersectionNode = function(headA, headB) {
   }
   return null
 };
+
+// https://leetcode-cn.com/problems/rotate-list/
+/**
+ * @param {ListNode} head
+ * @param {number} k
+ * @return {ListNode}
+ */
+var rotateRight = function(head, k) {
+  if(k === 0 || !head) return head
+  let newNode = new ListNode(0, head)
+  let length = 0;
+  let curr = head;
+  let returnNode = new ListNode(0);
+  while(curr) {
+      curr = curr.next;
+      length++
+  }
+  if(length === 1 || !(k % length)) return head
+  k = length - k % length
+  curr = newNode
+  for(let i = 0; i < k; i++) {
+      curr = curr.next
+  }
+  returnNode.next = curr.next
+  curr.next = null
+  curr = returnNode.next
+  while(curr && curr.next) {
+    curr = curr.next
+  }
+  curr.next = newNode.next
+  return returnNode.next
+
+};
+
+
+
+
+
+
+const linkedList1 = new LinkedList();
+[1,2].forEach(value => linkedList1.append(value))
+console.log(rotateRight(linkedList1.head, 2).toArray())

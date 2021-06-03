@@ -13,3 +13,28 @@ var merge = function(nums1, m, nums2, n) {
 };
 // console.log(merge([1,2,3,0,0,0],3,[2,5,6],3))
 
+
+// https://leetcode-cn.com/problems/can-place-flowers
+/**
+ * @param {number[]} flowerbed
+ * @param {number} n
+ * @return {boolean}
+ */
+var canPlaceFlowers = function(flowerbed, n) {
+  let can = 0;
+  let planted = false
+  for(let i = 0; i < flowerbed.length; i++) {
+      if(!planted) {
+          if(flowerbed[i]) planted = false
+          else if(!flowerbed[i - 1] && !flowerbed[i] && !flowerbed[i + 1]) {
+            planted = true
+            can++
+          }
+      } else {
+          planted = false
+          continue
+      }
+  }
+  return can >= n ? true : false
+};
+console.log(canPlaceFlowers([1,0,0,0,1,0,0], 2))
