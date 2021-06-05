@@ -109,3 +109,22 @@ var invertTree = function(root) {
   root.left = temp
   return root
 };
+
+
+// https://leetcode-cn.com/problems/symmetric-tree/
+/**
+ * @param {TreeNode} root
+ * @return {boolean}
+ */
+var isSymmetric = function(root) {
+  if(root.left !== null && root.right !== null) {
+    if(root.left.val !== root.right.val) return false
+  }
+  if(root.left !== null) {
+    if(!isSymmetric(root.left)) return false
+  }
+  if(root.right !== null) {
+    if(!isSymmetric(root.right)) return false
+  }
+  return true
+};
