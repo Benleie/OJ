@@ -75,3 +75,37 @@ var isBalanced = function(root) {
   if(root === null) return true;
   return Math.abs(depth(root.left) - depth(root.right)) <= 1 && isBalanced(root.left) && isBalanced(root.right)
 };
+
+// https://leetcode-cn.com/problems/minimum-depth-of-binary-tree/
+/**
+ * @param {TreeNode} root
+ * @return {number}
+ */
+var minDepth = function(root) {
+  if(root === null) return 0
+  if(root.left === null && root.right === null) return 1
+  let min_depth = Number.MAX_VALUE
+  if(root.left) {
+    min_depth = Math.min(minDepth(root.left), min_depth)
+  }
+  if(root.right) {
+    min_depth = Math.min(minDepth(root.right), min_depth)
+  }
+  return min_depth + 1
+};
+
+// https://leetcode-cn.com/problems/invert-binary-tree/
+/**
+ * @param {TreeNode} root
+ * @return {TreeNode}
+ */
+var invertTree = function(root) {
+  if(root === null) return root
+  let temp;
+  root.left = invertTree(root.left)
+  root.right = invertTree(root.right)
+  temp = root.right
+  root.right = root.left;
+  root.left = temp
+  return root
+};
