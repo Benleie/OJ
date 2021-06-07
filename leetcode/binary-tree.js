@@ -117,14 +117,29 @@ var invertTree = function(root) {
  * @return {boolean}
  */
 var isSymmetric = function(root) {
-  if(root.left !== null && root.right !== null) {
-    if(root.left.val !== root.right.val) return false
+  const check = (p, q) => {
+    if(!p && !q) return true
+    if(!p || !q) return false
+    return p.val === q.val && check(p.left, q.right) && check(p.right, q.left)
   }
-  if(root.left !== null) {
-    if(!isSymmetric(root.left)) return false
+  return check(root, root)
+};
+
+
+// https://leetcode-cn.com/problems/convert-sorted-array-to-binary-search-tree
+/**
+ * @param {number[]} nums
+ * @return {TreeNode}
+ */
+
+var sortedArrayToBST = function(nums) {
+  const helper = (arr, left, right) => {
+    if(left > right) return null;
+    let mid = Math.floor((left + right) / 2);
+    let node = new TreeNode(arr[mid])
+    node.left = helper(arr, left, mid - 1)
+    node.right = helper(arr, mid + 1, right);
+    return node
   }
-  if(root.right !== null) {
-    if(!isSymmetric(root.right)) return false
-  }
-  return true
+  return helper(nums, 0, nums.length - 1)
 };

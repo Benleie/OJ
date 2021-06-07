@@ -33,4 +33,39 @@ var twoSum = function(nums, target) {
   }
   return 'can not find match value'
 }
-console.log(twoSum([3,2,3,5], 8))
+// console.log(twoSum([3,2,3,5], 8))
+
+
+/**
+ * @param {number} numRows
+ * @return {number[][]}
+ */
+var generate = function(numRows) {
+  if(numRows < 1) return []
+  let resArr = [[1]]
+  for(let i = 1; i < numRows; i++) {
+    let arr = new Array(i + 1)
+    for(let j = 0; j <= i; j++) {
+      if(j === 0 || j === i) arr[j] = 1
+      else arr[j] = resArr[i - 1][j - 1] + resArr[i - 1][j]
+    }
+    resArr.push(arr)
+  }
+  return resArr
+};
+// console.log(generate(5))
+
+var lengthOfLastWord = function(s) {
+  let length = 0;
+  let count = 0;
+  for(let i = 0; i < s.length; i++) {
+      if(s[i] !== ' ') {
+          length = ++count
+      }
+      else {
+          count = 0
+      }
+  }
+  return length
+};
+console.log(lengthOfLastWord("b   a    sd   "))
