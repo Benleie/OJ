@@ -27,7 +27,8 @@
   + Return value: The removed element from the array; undefined if the array is empty.
 
 + array.sort([compareFunction])
-  + 原地排序算法；默认将数组元素转化为字符串，按照编码序列时进行排序 
+  + 原地排序算法；
+  + 默认将数组元素转化为字符串，按照编码序列时进行排序 
   + 按照调用该函数的返回值排序
 
 ## ES6
@@ -73,6 +74,7 @@ let set = new Set()
 set.size
 set.add(1)
 set.add(2)
+set.has(3)
 set.delete(1)
 set.clear()
 ```

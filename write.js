@@ -12,7 +12,8 @@ let obj = {
 }
 
 var set = new Set([1, 2, 3, 3, 2, 1, 2, 3, 1]);
-// console.log(set)
+console.log(set.has(4))
+
 // console.log(Array.from(set));
 
 
@@ -30,5 +31,8 @@ let rmDup = function(dupArr) {
 }
 
 let arr11 = [1, 2, 2, 2, 3, 4, 4, 5]
-console.log(rmDup(arr11))
+// console.log(rmDup(arr11))
 
+let arrToSort = [1, 100, 3, 2, 3,7,6,5,4]
+arrToSort.sort((a, b) => a - b)
+console.log(arrToSort)
