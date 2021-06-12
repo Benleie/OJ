@@ -36,5 +36,22 @@ var longestConsecutive = (nums) => {
 }
 
 
-console.log(longestConsecutive([20,1,2,2,3,0,10,19]))
-console.log(longestConsecutive([100,4,200,1,3,2]))
+// console.log(longestConsecutive([20,1,2,2,3,0,10,19]))
+// console.log(longestConsecutive([100,4,200,1,3,2]))
+
+/**
+ * https://leetcode-cn.com/problems/reverse-integer/
+ * @param {number} x
+ * @return {number}
+ */
+var reverse = function(x) {
+  if(!x) return 0;
+  if(x < 0) return -reverse(-x)
+  let num = 0;
+  while(x) {
+    num = num * 10 + x % 10
+    x = Math.floor(x / 10)
+  }
+  return num >= -Math.pow(2,31) && num < Math.pow(2,31) - 1 ? num : 0
+};
+// console.log(reverse(-1230))

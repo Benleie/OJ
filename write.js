@@ -12,7 +12,6 @@ let obj = {
 }
 
 var set = new Set([1, 2, 3, 3, 2, 1, 2, 3, 1]);
-console.log(set.has(4))
 
 // console.log(Array.from(set));
 
@@ -35,4 +34,11 @@ let arr11 = [1, 2, 2, 2, 3, 4, 4, 5]
 
 let arrToSort = [1, 100, 3, 2, 3,7,6,5,4]
 arrToSort.sort((a, b) => a - b)
-console.log(arrToSort)
+
+
+var isPalindrome = function(x) {
+  if(x < 0) return false
+  
+  let a = x % 10
+  
+};
