@@ -103,4 +103,44 @@ var searchRotated = function(nums, target) {
   }
   return -1
 }
-console.log(searchRotated([4,5,6,7,8,9,10,1,2,3], 1))
+// console.log(searchRotated([4,5,6,7,8,9,10,1,2,3], 1))
+
+
+/**
+ * https://leetcode-cn.com/problems/search-insert-position/
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number}
+ */
+var searchInsert = function(nums, target) {
+  let left = 0; right = nums.length - 1;
+  let mid
+  while(left <= right) {
+    mid = Math.floor((left + right) / 2)
+    if(nums[mid] === target) return mid
+    else if(nums[mid] > target) right = mid - 1
+    else left = mid + 1
+  }
+  return left
+};
+// console.log(searchInsert([1,2,3,5,6], 4))
+
+
+
+/**
+ * https://leetcode-cn.com/problems/maximum-subarray/
+ * 简单版动态规划
+ * @param {number[]} nums
+ * @return {number}
+ */
+var maxSubArray = function(nums) {
+  let max = -Number.MAX_VALUE;
+  let curr = 0;
+  for(num of nums) {
+    curr = curr > 0 ? curr + num : num
+    max = Math.max(max, curr)
+  }
+  return max
+};
+// console.log(maxSubArray([1,2,3,-1,4,-100,2,55]))
+console.log(maxSubArray([-100,-2,-55]))
