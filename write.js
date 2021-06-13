@@ -31,14 +31,5 @@ let rmDup = function(dupArr) {
 
 let arr11 = [1, 2, 2, 2, 3, 4, 4, 5]
 // console.log(rmDup(arr11))
+let str33 = 'sdfsdf'
 
-let arrToSort = [1, 100, 3, 2, 3,7,6,5,4]
-arrToSort.sort((a, b) => a - b)
-
-
-var isPalindrome = function(x) {
-  if(x < 0) return false
-  
-  let a = x % 10
-  
-};

@@ -8,7 +8,7 @@
 3. 
 4. 
 
-## 链表
+## 双指针
 + [19. Remove Nth Node From End of List](https://leetcode-cn.com/problems/remove-nth-node-from-end-of-list/)
   1. 计算长度
   2. 双指针（这道题何必使用双指针呢？）
@@ -22,6 +22,7 @@
 
 + [203. Remove Linked List Elements](https://leetcode-cn.com/problems/remove-linked-list-elements/) 
 + [876. Middle of the Linked List](https://leetcode-cn.com/problems/middle-of-the-linked-list/)
+  + 快慢指针
 
 
 ## 二叉树

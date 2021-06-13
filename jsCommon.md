@@ -67,6 +67,7 @@ let map = new Map()
 map.has(a)
 map.get(a)
 map.set(a, true)
+console.log(map.size)
 ```
 ### Set
 ```js

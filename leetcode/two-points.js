@@ -81,9 +81,26 @@ var lengthOfLongestSubstring = function(s) {
  * @param {string} needle
  * @return {number}
  */
-var strStr = function(haystack, needle) {
-
-};
+/* var strStr = function(haystack, needle) {
+  if(!needle.length) return 0
+  let j = 1
+  for(let i = 0; i < haystack.length; i++) {
+    if(haystack[i] === needle[0]) {
+      for(j; j < needle.length; j++){
+        if(haystack[i + j] !== needle[j]) {
+          j = 1
+          break
+        }
+      }
+      if(j === needle.length) return i
+    }
+  }
+  return -1
+}; */
+/* var strStr = function(haystack, needle) {
+  if(!needle.length) return 0
+  return haystack.indexOf(needle)
+}; */
 
 
 /**
@@ -162,6 +179,8 @@ var maxArea = function(height) {
 };
 // console.log(maxArea([1,8,6,2,5,4,8,3,7]))
 
+
+
 /**
  * 15: 3sum
  * @param {number[]} nums
@@ -194,3 +213,57 @@ var threeSum = function(nums) {
   return arr
 };
 // console.log(threeSum([-1,0,1,2,-1,-4]))
+
+
+
+/**
+ * https://leetcode-cn.com/problems/minimum-window-substring/
+ * @param {string} s
+ * @param {string} t
+ * @return {string}
+ */
+var minWindow = function(s, t) {
+  let need = new Map()
+    , window = new Map()
+    , left = 0, right = 0
+    , valid = 0
+  let start = 0, length = Number.MAX_VALUE
+
+  for(word of t) {
+    need.set(word, need.has(word) ? need.get(word) + 1 : 1)
+  }
+  
+  while(right < s.length) {
+    let c = s[right]
+    right++
+    if (need.has(c)) {
+      // window[c]++;
+      window.set(c, window.has(c) ? window.get(c) + 1 : 1)
+      if (window.get(c) == need.get(c))
+          valid++;
+    }
+
+    // 判断左侧窗口是否要收缩
+    while (valid == need.size) {
+      //更新窗口数据与更新目标字符串的顺序没有要求
+        // 进行窗口内数据的一系列更新
+        let d = s[left];
+        if (need.has(d)) {
+            if (window.get(d) == need.get(d))
+                valid--;
+            window.set(d, window.get(d) - 1);
+        }   
+        // 在这里更新最小覆盖子串
+        if (right - left < length) {
+          start = left;
+          length = right - left;
+        }
+        // 左移窗口
+        left++;
+    }
+  }
+  return length === Number.MAX_VALUE ?
+    '' : s.slice(start, start + length)
+};
+
+console.log(minWindow('CBDFADOBECODEBANCFF', 'ABC'))
