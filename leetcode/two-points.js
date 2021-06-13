@@ -101,6 +101,15 @@ var lengthOfLongestSubstring = function(s) {
   if(!needle.length) return 0
   return haystack.indexOf(needle)
 }; */
+var strStr = function(haystack, needle) {
+  if(!needle.length) return 0
+  for(let i = 0; i < haystack.length; i++) {
+    if(haystack.slice(i, i + needle.length) === needle) {
+      return i
+    }
+  }
+  return -1
+};
 
 
 /**
