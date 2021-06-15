@@ -370,3 +370,4 @@ var findAnagrams = function(s, p) {
   return resArr
 };
 console.log(findAnagrams('abpadddabba', 'ab'))
+// console.log(Math.max.apply(Math, [1,2,6,3]))
