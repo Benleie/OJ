@@ -77,14 +77,20 @@ var isBalanced = function(root) {
   return Math.abs(depth(root.left) - depth(root.right)) <= 1 && isBalanced(root.left) && isBalanced(root.right)
 };
 
-// https://leetcode-cn.com/problems/minimum-depth-of-binary-tree/
+
+
+
 /**
+ * https://leetcode-cn.com/problems/minimum-depth-of-binary-tree/
+ * 最小深度是：根节点到最近的叶子结点的最短路径
  * @param {TreeNode} root
  * @return {number}
  */
 var minDepth = function(root) {
   if(root === null) return 0
   if(root.left === null && root.right === null) return 1
+  // 需要注意最小深度的定义，不然容易写出如下的代码
+  // return Math.min(minDepth(root.left), minDepth(root.right), Number.MAX_VALUE) + 1
   let min_depth = Number.MAX_VALUE
   if(root.left) {
     min_depth = Math.min(minDepth(root.left), min_depth)
