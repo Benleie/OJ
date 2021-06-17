@@ -22,6 +22,7 @@ var moveZeroes = function(nums) {
   let left = 0; 
   let right = 0;
   while(right < nums.length) {
+    // 左指针指向上一个非零元素
     if(nums[right]) {
       const temp = nums[right]
       nums[right] = nums[left]

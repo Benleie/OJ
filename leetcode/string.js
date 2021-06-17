@@ -43,6 +43,7 @@ var longestCommonPrefix = function(strs) {
  * @param {string} b
  * @return {string}
  */
+
 // js精度会丢失
 /* var addBinary = function(a, b) {
   let numA = parseInt(a, 2)

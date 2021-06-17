@@ -17,6 +17,7 @@
 
 + array.splice(start[, deleteCount[, item1[, item2[, ...]]]])
   + 会改变原数组
+  + deleteCount可选 若不填代表删掉之后的所有元素
   + 返回值：由被删除的元素组成的一个数组。如果只删除了一个元素，则返回只包含一个元素的数组。如果没有删除元素，则返回空数组。
 
 + arr.push(element1, ..., elementN)
