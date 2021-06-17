@@ -32,4 +32,21 @@ var longestCommonPrefix = function(strs) {
   }
   return strs[0]
 };
-console.log(longestCommonPrefix(["flower","flow","flight"]))
+// console.log(longestCommonPrefix(["flower","flow","flight"]))
+
+
+
+
+/**
+ * https://leetcode-cn.com/problems/add-binary/submissions/
+ * @param {string} a
+ * @param {string} b
+ * @return {string}
+ */
+// js精度会丢失
+/* var addBinary = function(a, b) {
+  let numA = parseInt(a, 2)
+  let numB = parseInt(b, 2)
+  let total = numA + numB
+  return Number(total).toString(2)
+}; */
