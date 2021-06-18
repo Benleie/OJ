@@ -60,18 +60,17 @@ var longestCommonPrefix = function(strs) {
 var reverseWords = function(s) {
   let arr = s.split(' ')
   for(let i = 0; i < arr.length; i++) {
-      let left = 0, right = arr[i].length - 1;
+      let strArr = arr[i].split('')
+      let left = 0, right = strArr.length - 1;
       while(left <= right) {
-          const temp = arr[i][right]
-          console.log(arr[i][left])
-          arr[i][right--] = arr[i][left]
-          // console.log(arr[i][right])
-          arr[i][left++] = temp
+          const temp = strArr[right]
+          strArr[right--] = strArr[left]
+          strArr[left++] = temp
       }
+      arr[i] = strArr.join('')
   }
   
   return arr.join(' ')
 };
-console.log(reverseWords("Let's take LeetCode contest"))
-
+// console.log(reverseWords("Let's take LeetCode contest"))
 
