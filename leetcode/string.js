@@ -51,3 +51,27 @@ var longestCommonPrefix = function(strs) {
   let total = numA + numB
   return Number(total).toString(2)
 }; */
+
+/**
+ * https://leetcode-cn.com/problems/reverse-words-in-a-string-iii/submissions/
+ * @param {string} s
+ * @return {string}
+ */
+var reverseWords = function(s) {
+  let arr = s.split(' ')
+  for(let word of arr) {
+      // let left = 0, right = word.length - 1;
+      word = 'ggg'
+      // while(left < right) {
+      //     const temp = word[right]
+      //     word[right--] = word[left]
+      //     word[left++] = temp 
+      // }
+      console.log(word[1])
+  }
+  
+  return arr.join(' ')
+};
+console.log(reverseWords("Let's take LeetCode contest"))
+
+

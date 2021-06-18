@@ -1,7 +1,19 @@
 # Array
 + forEach(callback(currentValue, index?, array?))
   + 它总是返回undefined值，并且不可链式调用
-  + forEach不会直接改变调用它的对象，但是那个对象可能会被callback函数改变。
+  + forEach不会直接改变调用它的对象，但是那个对象可能会被callback函数改变.
+    + 类似于for...of，不能通过赋值表达式修改currentValue
+    ```js
+    let arr3 = [1,2,3,4]
+    for(value of arr3) {
+      value = 99
+      console.log(value)
+    }
+    // for(let i = 0; i < arr3.length; i++) {
+    //   arr3[i] = 99
+    // }
+    console.log(arr3)
+    ```
   + 不建议中止或跳出forEach() 循环
 
 + arr.map((currentValue[, index[, array]]) => { }[, thisArg])
