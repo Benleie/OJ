@@ -59,15 +59,15 @@ var longestCommonPrefix = function(strs) {
  */
 var reverseWords = function(s) {
   let arr = s.split(' ')
-  for(let word of arr) {
-      // let left = 0, right = word.length - 1;
-      word = 'ggg'
-      // while(left < right) {
-      //     const temp = word[right]
-      //     word[right--] = word[left]
-      //     word[left++] = temp 
-      // }
-      console.log(word[1])
+  for(let i = 0; i < arr.length; i++) {
+      let left = 0, right = arr[i].length - 1;
+      while(left <= right) {
+          const temp = arr[i][right]
+          console.log(arr[i][left])
+          arr[i][right--] = arr[i][left]
+          // console.log(arr[i][right])
+          arr[i][left++] = temp
+      }
   }
   
   return arr.join(' ')
