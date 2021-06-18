@@ -52,6 +52,10 @@
 # String
 + ES5: substring, slice
 + ES6: includes
++ String类型是immutable objects [stackoverflow](https://stackoverflow.com/questions/51185/are-javascript-strings-immutable-do-i-need-a-string-builder-in-javascript)
+  + String类型的所有方法均不能修改原string
+  + 需要修改时（比如反转字符串），应该修改字符串数组，而不是字符串本身
++ 基本字符串和字符串对象
 
 + `let newStr = str.replace()`
   + The original string is left unchanged.
