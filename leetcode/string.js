@@ -74,3 +74,14 @@ var reverseWords = function(s) {
 };
 // console.log(reverseWords("Let's take LeetCode contest"))
 
+
+
+
+/**
+ * https://leetcode-cn.com/problems/find-common-characters/
+ * @param {string[]} words
+ * @return {string[]}
+ */
+var commonChars = function(words) {
+  
+};

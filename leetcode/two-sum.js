@@ -68,4 +68,39 @@ var lengthOfLastWord = function(s) {
   }
   return length
 };
-console.log(lengthOfLastWord("b   a    sd   "))
+// console.log(lengthOfLastWord("b   a    sd   "))
+
+
+
+/**
+ * https://leetcode-cn.com/problems/intersection-of-two-arrays-ii/
+ * @param {number[]} nums1
+ * @param {number[]} nums2
+ * @return {number[]}
+ */
+/* var intersect = function(nums1, nums2) {
+  let res = []
+  nums1.forEach(value => {
+      if(nums2.includes(value)) {
+          res.push(value)
+          nums2.splice(nums2.indexOf(value), 1)
+      }
+  })
+  return res
+}; */
+var intersect = function(nums1, nums2) {
+  nums1.sort((a, b) => a - b)
+  nums2.sort((a, b) => a - b)
+  let k = 0, m = 0;
+  let res = [];
+  while(k < nums1.length && m < nums2.length) {
+    if(nums1[k] === nums2[m]) {
+      res.push(nums1[k])
+      k++, m++
+    } 
+    else if(nums1[k] > nums2[m]) m++
+    else k++
+  }
+  return res
+};
+// console.log(intersect([4,9,5], [9,4,9,8,4]))
