@@ -78,7 +78,9 @@ var lengthOfLastWord = function(s) {
  * @param {number[]} nums2
  * @return {number[]}
  */
-/* var intersect = function(nums1, nums2) {
+/* 
+// 暴力splice去重
+var intersect = function(nums1, nums2) {
   let res = []
   nums1.forEach(value => {
       if(nums2.includes(value)) {
@@ -88,6 +90,8 @@ var lengthOfLastWord = function(s) {
   })
   return res
 }; */
+
+// two-pointers
 var intersect = function(nums1, nums2) {
   nums1.sort((a, b) => a - b)
   nums2.sort((a, b) => a - b)

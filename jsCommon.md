@@ -46,6 +46,7 @@
 
 ## ES6
 + arr.fill()
++ arr.from()  String,Map,Set转数组  从一个类似数组或可迭代对象创建一个新的，浅拷贝的数组实例。 
 
 
 
@@ -84,6 +85,8 @@ let map = new Map()
 map.has(a)
 map.get(a)
 map.set(a, true)
+map.values()
+map.keys()
 console.log(map.size)
 ```
 ### Set
