@@ -35,7 +35,7 @@ var isValid = function(s) {
   return !stackArr.length
 };
 
-console.log(isValid("(([]){})"))
+// console.log(isValid("(([]){})"))
 // console.log(isValid("([)])"))
 
 // 速度慢，内存占用高
@@ -71,3 +71,23 @@ var nextGreaterElement = function(nums1, nums2) {
   return arr
 }
 // log(nextGreaterElement([4,1,2], [1,3,4,2]))
+
+/**
+ * https://leetcode-cn.com/problems/daily-temperatures/submissions/
+ * @param {number[]} temperatures
+ * @return {number[]}
+ */
+var dailyTemperatures = function(temperatures) {
+  const arr = Array(temperatures.length).fill(0)
+  const stack = []
+  for(let i = 0; i < temperatures.length; i++) {
+      const now = temperatures[i]
+      while(stack.length && temperatures[stack[stack.length - 1]] < now) {
+          const prevIndex = stack.pop()
+          arr[prevIndex] = i - prevIndex
+      }
+      stack.push(i)
+  }
+  return arr
+};
+log(dailyTemperatures([73,74,75,71,69,72,76,73]))
