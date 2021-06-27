@@ -117,7 +117,7 @@ var isLongPressedName = function(name, typed) {
  * @param {number[]} nums2
  * @return {number[]}
  */
-var nextGreaterElement = function(nums1, nums2) {
+/* var nextGreaterElement = function(nums1, nums2) {
   const arr = Array(nums1.length).fill(-1)
   for(let j = 0; j < nums1.length; j++) {
       const k = nums2.indexOf(nums1[j])
@@ -129,8 +129,9 @@ var nextGreaterElement = function(nums1, nums2) {
       }
   }
   return arr
-};
-// log(nextGreaterElement([4,1,2], [1,3,4,2]))
+}; */
+
+
 
 
 
@@ -167,4 +168,4 @@ var decodeString = function(s) {
     }
     return res
 };
-log(decodeString('3[mn2[k]]'))
+// log(decodeString('3[mn2[k]]'))

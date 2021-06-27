@@ -83,7 +83,7 @@
 ```js
 let map = new Map()
 map.has(a)
-map.get(a)
+map.get(a)  // 如果没有，返回undefined
 map.set(a, true)
 map.values()
 map.keys()
