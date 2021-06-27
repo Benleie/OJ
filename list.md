@@ -3,10 +3,9 @@
 + [ ] [169. Majority Element](https://leetcode-cn.com/problems/majority-element/)
     
 ### todoList
-1. [61. 旋转链表](https://leetcode-cn.com/problems/rotate-list/) 
-2. 
-3. 
-4. 
++  [61. 旋转链表](https://leetcode-cn.com/problems/rotate-list/) 
++ next-greater-element-ii 取余的办法 来拉直循环数组，避免空间的浪费
+
 
 ## 双指针
 + [19. Remove Nth Node From End of List](https://leetcode-cn.com/problems/remove-nth-node-from-end-of-list/)
@@ -27,5 +26,15 @@
 
 ## 二叉树
 
+## 攻克新题记录
+### 2021.06
++ 回溯算法
+  + [17. Letter Combinations of a Phone Number](https://leetcode-cn.com/problems/letter-combinations-of-a-phone-number)
+  + []()
+
++ 栈 单调栈
+  + [](https://leetcode-cn.com/problems/daily-temperatures/)
+  + []()
+  + []()
 
 

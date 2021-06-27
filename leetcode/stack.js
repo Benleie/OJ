@@ -119,3 +119,19 @@ var nextGreaterElements = function(nums) {
 };
 
 // log(nextGreaterElements([4,1,6,4,5,3]))
+
+
+/**
+ * https://leetcode-cn.com/problems/letter-combinations-of-a-phone-number/
+ * @param {string} digits
+ * @return {string[]}
+ */
+var letterCombinations = function(digits) {
+  const map = ['', '', 'abc', 'def', 'ghi', 'jkl', 'mno', 'pqrs', 'tuv', 'wxyz']
+  if(!digits.length) return []
+  let result = [], path = []
+
+  function backTrace(k, ) {
+    
+  }
+};
