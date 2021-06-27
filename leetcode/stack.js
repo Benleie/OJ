@@ -90,4 +90,32 @@ var dailyTemperatures = function(temperatures) {
   }
   return arr
 };
-log(dailyTemperatures([73,74,75,71,69,72,76,73]))
+// log(dailyTemperatures([73,74,75,71,69,72,76,73]))
+
+
+
+
+/**
+ * https://leetcode-cn.com/problems/next-greater-element-ii/
+ * @param {number[]} nums
+ * @return {number[]}
+ */
+var nextGreaterElements = function(nums) {
+  const MAX = Math.max(nums)
+  const longNums = nums.concat(nums)
+  const stack = []
+  const res = Array(nums.length).fill(-1)
+
+  for(let i = 0; i < longNums.length; i++) {
+      while(stack.length && longNums[stack[stack.length - 1]] < longNums[i]) {
+          const index = stack.pop()
+          if(index < nums.length)
+            res[index] = longNums[i]
+      }
+      stack.push(i)
+      if(i > nums.length && longNums[i] === MAX) break
+  }
+  return res
+};
+
+// log(nextGreaterElements([4,1,6,4,5,3]))
