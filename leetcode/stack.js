@@ -127,11 +127,24 @@ var nextGreaterElements = function(nums) {
  * @return {string[]}
  */
 var letterCombinations = function(digits) {
+  const k = digits.length
   const map = ['', '', 'abc', 'def', 'ghi', 'jkl', 'mno', 'pqrs', 'tuv', 'wxyz']
-  if(!digits.length) return []
+  if(!k) return []
   let result = [], path = []
+  backTrace(0)
+  return result
 
-  function backTrace(k, ) {
-    
+  function backTrace(index) {
+    if(path.length === k) {
+      result.push(path.join(''))
+      return ;
+    }
+    for(let value of map[digits[index]]) {
+      path.push(value)
+      backTrace(index + 1)
+      path.pop()
+    }
   }
 };
+// log(letterCombinations('4'))
+
