@@ -182,6 +182,12 @@ var permute = function(nums) {
 // log(permute([1,2]))
 
 
+/**
+ * https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/flat
+ * @param {any[]} arr
+ * @return {number[]}
+ */
+
 // Array flat
 let arrToF = [1, [2, [3, 4, [5]]]]
 // console.log(arrToF.flat(Infinity))
@@ -198,4 +204,4 @@ let flat = function(arr) {
   }
   return res
 }
-console.log(flat(arrToF))
+// console.log(flat(arrToF))
