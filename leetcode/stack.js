@@ -179,5 +179,23 @@ var permute = function(nums) {
       }
     }
 };
-log(permute([1,2]))
+// log(permute([1,2]))
 
+
+// Array flat
+let arrToF = [1, [2, [3, 4, [5]]]]
+// console.log(arrToF.flat(Infinity))
+
+let flat = function(arr) {
+  let res = []
+
+  if(!Array.isArray(arr)) {
+    return [arr]
+  }
+  
+  for(let value of arr) {
+    res.push(...flat(value))
+  }
+  return res
+}
+console.log(flat(arrToF))
