@@ -169,3 +169,6 @@ var decodeString = function(s) {
     return res
 };
 // log(decodeString('3[mn2[k]]'))
+
+
+
