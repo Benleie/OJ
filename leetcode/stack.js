@@ -49,6 +49,8 @@ let isValid2 = (str) => {
   return str === ''
 }
 
+
+
 /**
  * https://leetcode-cn.com/problems/next-greater-element-i/submissions/
  * @param {number[]} nums1
@@ -71,6 +73,8 @@ var nextGreaterElement = function(nums1, nums2) {
   return arr
 }
 // log(nextGreaterElement([4,1,2], [1,3,4,2]))
+
+
 
 /**
  * https://leetcode-cn.com/problems/daily-temperatures/submissions/
@@ -147,4 +151,33 @@ var letterCombinations = function(digits) {
   }
 };
 // log(letterCombinations('4'))
+
+
+
+/**
+ * https://leetcode-cn.com/problems/permutations/
+ * @param {number[]} nums
+ * @return {number[][]}
+ */
+var permute = function(nums) {
+    let result = []
+    let path = []
+    backTrace([])
+    return result
+    function backTrace(used) {
+      if(path.length === nums.length) {
+        result.push(path.slice(0))
+        return
+      }
+      for(let value of nums) {
+        if(used[value]) continue
+        used[value] = true
+        path.push(value)
+        backTrace(used)
+        path.pop()
+        used[value] = false
+      }
+    }
+};
+log(permute([1,2]))
 

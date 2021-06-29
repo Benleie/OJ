@@ -30,7 +30,7 @@
 ### 2021.06
 + 回溯算法
   + [17. Letter Combinations of a Phone Number](https://leetcode-cn.com/problems/letter-combinations-of-a-phone-number)
-  + []()
+  + [46. Permutations](https://leetcode-cn.com/problems/permutations/)
 
 + 栈 单调栈
   + [](https://leetcode-cn.com/problems/daily-temperatures/)
