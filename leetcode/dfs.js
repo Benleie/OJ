@@ -1,6 +1,5 @@
 const log = console.log
 
-
 // https://leetcode-cn.com/problems/combination-sum/
 /* var combinationSum = function(candidates, target) {
   const ans = [];
@@ -47,3 +46,16 @@ const combinationSum = (candidates, target) => {
 
 // log(combinationSum([2,3,6,7], 7))
 
+/**
+ * https://leetcode-cn.com/problems/powx-n/submissions/
+ * @param {number} x
+ * @param {number} n
+ * @return {number}
+ */
+var myPow = function(x, n) {
+  if(n < 0) return 1 / myPow(x, -n)
+  if(n === 0) return 1
+  const y = myPow(x, Math.floor(n / 2))
+  return n % 2 === 0 ? y * y : y * y * x
+};
+// log(myPow(2,5))
