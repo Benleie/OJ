@@ -1,6 +1,11 @@
 const log = console.log
 
-// https://leetcode-cn.com/problems/combination-sum/
+/**
+ * https://leetcode-cn.com/problems/combination-sum/
+ * @param {number[]} candidates
+ * @param {number} target
+ * @return {number[][]}
+ */
 /* var combinationSum = function(candidates, target) {
   const ans = [];
   const dfs = (target, combine, idx) => {
@@ -27,6 +32,7 @@ const log = console.log
 const combinationSum = (candidates, target) => {
   const res = [];
   const dfs = (start, temp, sum) => { // start是当前选择的起点索引 temp是当前的集合 sum是当前求和
+    console.log(start)
     if (sum >= target) {
       if (sum == target) {
         res.push(temp.slice()); // temp的拷贝 加入解集
@@ -43,8 +49,11 @@ const combinationSum = (candidates, target) => {
   return res;
 };
 
+log(combinationSum([2,3,6,7], 7))
 
-// log(combinationSum([2,3,6,7], 7))
+
+
+
 
 /**
  * https://leetcode-cn.com/problems/powx-n/submissions/

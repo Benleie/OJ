@@ -67,8 +67,8 @@
 
 + concat
   + 强烈建议使用赋值操作符（+, +=）代替 concat 方法。
-  
-+ 
++ charCodeAt
+  + `'A'.charCodeAt()` 默认为0
 
 # Object
 + Object.keys()
