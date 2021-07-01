@@ -5,6 +5,7 @@
 ### todoList
 +  [61. 旋转链表](https://leetcode-cn.com/problems/rotate-list/) 
 + next-greater-element-ii 取余的办法 来拉直循环数组，避免空间的浪费
++ binary-tree-inorder-traversal 迭代的方案来做  
 
 
 ## 双指针

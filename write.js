@@ -1,3 +1,4 @@
+const log = console.log
 
 
 let map1 = new Map([
@@ -32,4 +33,5 @@ let rmDup = function(dupArr) {
 let arr11 = [1, 2, 2, 2, 3, 4, 4, 5]
 // console.log(rmDup(arr11))
 let str33 = 'sdfsdf'
+
 
