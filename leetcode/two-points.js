@@ -224,6 +224,25 @@ var threeSum = function(nums) {
 };
 // console.log(threeSum([-1,0,1,2,-1,-4]))
 
+/**
+ * https://leetcode-cn.com/problems/backspace-string-compare/submissions/
+ * @param {string} s
+ * @param {string} t
+ * @return {boolean}
+ */
+var backspaceCompare = function(s, t) {
+  const revert = (str) => {
+      const stack = []
+      for(let word of str) {
+          if(word !== '#') stack.push(word)
+          else if(stack.length) stack.pop()
+      }
+      return stack.join()
+  }
+  return revert(s) === revert(t)
+};
+
+
 
 
 /**
