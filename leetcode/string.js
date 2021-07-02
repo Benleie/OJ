@@ -176,7 +176,7 @@ var decodeString = function(s) {
  * @param {string} s
  * @return {string}
  */
-var removeDuplicates = function(s) {
+/* var removeDuplicates = function(s) {
   let arr = s.split('')
   for(let i = 1; i < arr.length; i++) {
       if(arr[i] === arr[i-1]) {
@@ -186,7 +186,7 @@ var removeDuplicates = function(s) {
   }
   return arr.join('')
 };
-
+ */
 var removeDuplicates = function(s) {
   let arr = s.split('')
   let stack = []
