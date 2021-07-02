@@ -24,6 +24,8 @@
 + [876. Middle of the Linked List](https://leetcode-cn.com/problems/middle-of-the-linked-list/)
   + 快慢指针
 
+## 栈
++ [](https://leetcode-cn.com/problems/daily-temperatures/)
 
 ## 二叉树
 
