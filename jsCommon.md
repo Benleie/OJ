@@ -66,7 +66,7 @@
   + 如果值为负数，会被当做 strLength + beginIndex 看待，这里的strLength 是字符串的长度（例如， 如果beginIndex是-3则看作是：strLength - 3）
 
 + concat
-  + 强烈建议使用赋值操作符（+, +=）代替 concat 方法。
+  + 强烈建议使用赋值操作符（+, +=）代替concat方法。
 + charCodeAt
   + `'A'.charCodeAt()` 默认为0
 

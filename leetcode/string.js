@@ -171,4 +171,31 @@ var decodeString = function(s) {
 // log(decodeString('3[mn2[k]]'))
 
 
+/**
+ * https://leetcode-cn.com/problems/remove-all-adjacent-duplicates-in-string/submissions/
+ * @param {string} s
+ * @return {string}
+ */
+var removeDuplicates = function(s) {
+  let arr = s.split('')
+  for(let i = 1; i < arr.length; i++) {
+      if(arr[i] === arr[i-1]) {
+          arr.splice(i-1, 2)
+          i = 0
+      }
+  }
+  return arr.join('')
+};
 
+var removeDuplicates = function(s) {
+  let arr = s.split('')
+  let stack = []
+  for(let i = 0; i < arr.length; i++) {
+    if(!stack.length || stack[stack.length - 1] !== arr[i]) {
+      stack.push(arr[i])
+    }
+    else  stack.pop()
+  }
+  return stack.join('')
+}
+log(removeDuplicates('abbaca'))
