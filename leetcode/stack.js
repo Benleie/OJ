@@ -205,3 +205,54 @@ let flat = function(arr) {
   return res
 }
 // console.log(flat(arrToF))
+
+
+/**
+ * https://leetcode-cn.com/problems/sort-characters-by-frequency/
+ * @param {string} s
+ * @return {string}
+ */
+var frequencySort = function(s) {
+  const map = new Map()
+  let res = ''
+  for(let word of s) {
+      map.set(word, map.get(word) ? map.get(word) + 1 : 1)
+  }
+  Array.from(map).sort((a, b) => b[1] - a[1])
+  .forEach(value => {
+    let count = value[1]
+    while(count-- > 0) {
+      res += value[0]
+    }
+  })
+  return res
+};
+// log(frequencySort('tree'))
+
+
+
+/**
+ * 316 https://leetcode-cn.com/problems/remove-duplicate-letters/
+ * @param {string} s
+ * @return {string}
+ */
+var removeDuplicateLetters = function(s) {
+  let map = new Map(), stack = []
+  for(let word of s) {
+    map.set(word, map.get(word) ? map.get(word) + 1 : 1)
+  }
+  for(let word of s) {
+    map.set(word, map.get(word) - 1)
+    if(!stack.includes(word)) {
+      let j = stack.length
+      // 栈顶的字符后面还有重复的，且字典序大于当前字符
+      while(j-- && stack[j] > word && map.get(stack[j])) {
+        stack.pop()
+      }
+      stack.push(word)
+    }
+  }
+  return stack.join('')
+};
+// log(removeDuplicateLetters('babc'))
+// log(removeDuplicateLetters('cbacdcbc'))
