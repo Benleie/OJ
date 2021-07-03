@@ -256,3 +256,34 @@ var removeDuplicateLetters = function(s) {
 };
 // log(removeDuplicateLetters('babc'))
 // log(removeDuplicateLetters('cbacdcbc'))
+
+
+
+/**
+ * https://leetcode-cn.com/problems/132-pattern/
+ * @param {number[]} nums
+ * @return {boolean}
+ */
+var find132pattern = function(nums) {
+  const stack = []
+  let k = -Number.MAX_VALUE
+  for(let i = nums.length - 1; i >= 0; i--){
+    if(nums[i] < k) return true
+    while(stack.length && nums[i] > stack[stack.length - 1]) {
+      k = Math.max(k, stack.pop())
+    }
+    stack.push(nums[i])
+  }
+  return false
+  // const m = Number.MAX_VALUE
+  // for(let num of nums) {
+  //   if(num > m && num < stack[stack.length - 1]) return true
+  //   while(!stack.length && num < stack[stack.length - 1]) {
+  //     m = Math.min(m, stack.pop())
+  //   }
+  //   stack.push(num)
+  // }
+  // return false
+};
+// log(find132pattern([3,1,4,2]))
+// log(find132pattern([1,0,1,-4,-3]))
