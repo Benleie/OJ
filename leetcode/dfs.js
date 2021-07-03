@@ -68,3 +68,5 @@ var myPow = function(x, n) {
   return n % 2 === 0 ? y * y : y * y * x
 };
 // log(myPow(2,5))
+
+

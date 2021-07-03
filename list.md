@@ -32,6 +32,7 @@
 
 ## 攻克新题记录
 ### 2021.06
++ leetcode刷到84
 + 回溯算法
   + [17. Letter Combinations of a Phone Number](https://leetcode-cn.com/problems/letter-combinations-of-a-phone-number)
   + [46. Permutations](https://leetcode-cn.com/problems/permutations/)

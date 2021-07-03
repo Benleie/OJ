@@ -91,6 +91,7 @@ console.log(map.size)
 ```
 ### Set
 ```js
+let set = new Set(arr)  // 使用数组初始化Set
 let set = new Set()
 set.size
 set.add(1)
