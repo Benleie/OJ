@@ -9,19 +9,25 @@ const log = console.log
  * @return {boolean}
  */
 var wordBreak = function(s, wordDict) {
-    const wordSet = new Set(wordDict)
-    const canBreak = (start) => {
-      if(start === s.length) return true
-      for(let i = start + 1; i <= s.length; i++) {
-        const prefix = s.slice(start, i)
-        if(wordSet.has(prefix) && canBreak(i))
-          return true
+  const wordSet = new Set(wordDict)
+  const arrBreak = []
+  const canBreak = (start) => {
+    if(start === s.length) return true
+    if(arrBreak[start] !== undefined) return arrBreak[start]
+    for(let i = start + 1; i <= s.length; i++) {
+      const prefix = s.slice(start, i)
+      if(wordSet.has(prefix) && canBreak(i)) {
+        arrBreak[start] = true
+        return true
       }
-      return false
     }
-    return canBreak(0)
+    arrBreak[start] = false
+    return false
+  }
+  return canBreak(0)
 };
-// log(wordBreak('leetcodes', ['leet','s', 'code']))
+log(wordBreak('leetcodes', ['le', 'leet','s', 'code']))
+log(wordBreak('goalspecial', ['go', 'goal','special']))
 
 
 
