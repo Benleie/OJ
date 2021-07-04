@@ -21,4 +21,20 @@ var wordBreak = function(s, wordDict) {
     }
     return canBreak(0)
 };
-log(wordBreak('leetcodes', ['leet','s', 'code']))
+// log(wordBreak('leetcodes', ['leet','s', 'code']))
+
+
+
+/**
+ * https://leetcode-cn.com/problems/largest-rectangle-in-histogram/
+ * @param {number[]} heights
+ * @return {number}
+ */
+var largestRectangleArea = function(heights) {
+
+};
+
+
+
+
+

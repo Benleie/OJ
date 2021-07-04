@@ -260,6 +260,31 @@ var removeDuplicateLetters = function(s) {
 
 
 /**
+ * https://leetcode-cn.com/problems/remove-k-digits/
+ * @param {string} num
+ * @param {number} k
+ * @return {string}
+ */
+var removeKdigits = function(num, k) {
+  let count = 0;
+  const stack = []
+  for(let value of num) {
+    while(stack.length && value < stack[stack.length - 1] && count++ < k) {
+      stack.pop()
+    }
+    stack.push(value)
+    // remove leading zero
+    if(stack.length === 1 && value === '0') stack.pop()
+  }
+  while(count++ < k) stack.pop()
+  return stack.join('') || '0'
+};
+// log(removeKdigits('1346291', 3))
+// log(removeKdigits('1134', 8))
+
+
+
+/**
  * https://leetcode-cn.com/problems/132-pattern/
  * @param {number[]} nums
  * @return {boolean}
