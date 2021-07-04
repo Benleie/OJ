@@ -1,3 +1,4 @@
+const log = console.log
 /**
  * @param {number[]} nums
  * @param {number} target
@@ -108,3 +109,22 @@ var intersect = function(nums1, nums2) {
   return res
 };
 // console.log(intersect([4,9,5], [9,4,9,8,4]))
+
+
+/**
+ * https://leetcode-cn.com/problems/set-mismatch/submissions/
+ * @param {number[]} nums
+ * @return {number[]}
+ */
+var findErrorNums = function(nums) {
+  nums.sort((a,b) => a - b)
+  const set = new Set(nums)
+  const arr = [0, 0]
+  for(let i = 0, count = 1; i < nums.length; i++) {
+      const count = i + 1
+      if(!arr[1] && !set.has(count)) arr[1] = count
+      if(nums[i] === nums[i+1]) arr[0] = nums[i]
+  }
+  return arr
+};
+// log(findErrorNums([1,5,3,2,2,7,6,4,8,9]))

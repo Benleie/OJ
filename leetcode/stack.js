@@ -312,3 +312,33 @@ var find132pattern = function(nums) {
 };
 // log(find132pattern([3,1,4,2]))
 // log(find132pattern([1,0,1,-4,-3]))
+
+
+
+/**
+ * https://leetcode-cn.com/problems/word-break/
+ * @param {string} s
+ * @param {string[]} wordDict
+ * @return {boolean}
+ */
+var wordBreak = function(s, wordDict) {
+  const wordSet = new Set(wordDict)
+  const arrBreak = []
+  const canBreak = (start) => {
+    if(start === s.length) return true
+    if(arrBreak[start] !== undefined) return arrBreak[start]
+    for(let i = start + 1; i <= s.length; i++) {
+      const prefix = s.slice(start, i)
+      if(wordSet.has(prefix) && canBreak(i)) {
+        arrBreak[start] = true
+        return true
+      }
+    }
+    arrBreak[start] = false
+    return false
+  }
+  return canBreak(0)
+};
+// log(wordBreak('leetcodes', ['le', 'leet','s', 'code']))
+// log(wordBreak('goalspecial', ['go', 'goal','special']))
+
