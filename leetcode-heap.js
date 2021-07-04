@@ -33,13 +33,15 @@ var largestRectangleArea = function(heights) {
 var findUnsortedSubarray = function(nums) {
   let left = 0 ,right = nums.length - 1
   let hasFind = {}
-  while(Object.keys(hasFind).length !== 2 || left <= right) {
+  while(left <= right && Object.keys(hasFind).length !== 2) {
+    // return hasFind.left
     if(nums[left] > nums[left + 1]) hasFind.left = left
     if(nums[right] < nums[right - 1]) hasFind.right = right
     if(!hasFind.left) left++
     if(!hasFind.right) right--
   }
+  log(hasFind)
   if(!hasFind.left || !hasFind.right) return 2
-  return hasFind.right - hasFind.left
+  return hasFind.right - hasFind.left + 1
 };
-log(findUnsortedSubarray([2,6,4,8,10,9,15]))  // 5
+log(findUnsortedSubarray([2,6,4,8,10,9,1,15]))  // 5
