@@ -177,3 +177,23 @@ var binaryTreePaths = function(root) {
   findPath(root, '')
   return paths
 };
+
+
+
+/**
+ * https://leetcode-cn.com/problems/sum-of-left-leaves/
+ * @param {TreeNode} root
+ * @return {number}
+ */
+var sumOfLeftLeaves = function(root) {
+  let sum = 0
+  const getSum = root => {
+    if (!root) return;
+    if(root.left && !root.left.left && !root.left.right)   // 注意是左叶子
+      sum += root.left.val
+    getSum(root.left)
+    getSum(root.right)
+  }
+  getSum(root)
+  return sum
+};
