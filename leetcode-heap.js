@@ -10,8 +10,11 @@ const log = console.log
  * @return {number}
  */
 var largestRectangleArea = function(heights) {
+  const MIN = Math.min(...heights)
   const stack = []
-  let res = 0
+  let res = MIN * heights.length
+
+  heights.push(0)
   for(let i = 0; i < heights.length; i++) {
     while(stack.length && heights[i] < heights[stack[stack.length - 1]]) {
       const prev = stack.pop()
@@ -21,7 +24,11 @@ var largestRectangleArea = function(heights) {
   }
   return res
 };
-// log(largestRectangleArea([2,1,5,6,2,3]))
+log(largestRectangleArea([2,1,5,6,2,3]))
+log(largestRectangleArea([2,1,2]))
+log(largestRectangleArea([1,1]))
+log(largestRectangleArea([1,5]))
+log(largestRectangleArea([5, 4, 1, 2]))
 
 
 
@@ -31,17 +38,18 @@ var largestRectangleArea = function(heights) {
  * @return {number}
  */
 var findUnsortedSubarray = function(nums) {
-  let left = 0 ,right = nums.length - 1
-  let hasFind = {}
-  while(left <= right && Object.keys(hasFind).length !== 2) {
-    // return hasFind.left
-    if(nums[left] > nums[left + 1]) hasFind.left = left
-    if(nums[right] < nums[right - 1]) hasFind.right = right
-    if(!hasFind.left) left++
-    if(!hasFind.right) right--
+  const stack = []
+  const res = [nums.length, -1]
+  for(let i = 0; i < nums.length; i++) {
+    while(stack.length && nums[i] < nums[stack[stack.length - 1]]) {
+      const prev = stack.pop()
+      if(prev < res[0]) res[0] = prev
+      res[1] = i
+    }
+    stack.push(i)
   }
-  log(hasFind)
-  if(!hasFind.left || !hasFind.right) return 2
-  return hasFind.right - hasFind.left + 1
+  if(res[0] === nums.length) return 0
+  return res[1] - res[0] + 1
 };
-log(findUnsortedSubarray([2,6,4,8,10,9,1,15]))  // 5
+// log(findUnsortedSubarray([2,6,4,8,10,9,15]))  // 5
+

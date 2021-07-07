@@ -7,6 +7,9 @@
  *     this.right = (right===undefined ? null : right)
  * }
  */
+
+
+
 /**
  * @param {TreeNode} root
  * @return {number}
@@ -149,4 +152,28 @@ var sortedArrayToBST = function(nums) {
     return node
   }
   return helper(nums, 0, nums.length - 1)
+};
+
+
+
+/**
+ * https://leetcode-cn.com/problems/binary-tree-paths/
+ * @param {TreeNode} root
+ * @return {string[]}
+ */
+var binaryTreePaths = function(root) {
+  const paths = []
+  const findPath = (root, path) => {
+    if (!root) return ;
+    path += root.val
+      if(!root.left && !root.right) {
+        paths.push(path)
+      } else {
+        path += '->'
+        findPath(root.left, path)
+        findPath(root.right, path)
+      }
+  }
+  findPath(root, '')
+  return paths
 };
