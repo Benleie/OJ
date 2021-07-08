@@ -197,3 +197,23 @@ var sumOfLeftLeaves = function(root) {
   getSum(root)
   return sum
 };
+
+
+
+/**
+ * https://leetcode-cn.com/problems/diameter-of-binary-tree/submissions/
+ * @param {TreeNode} root
+ * @return {number}
+ */
+var diameterOfBinaryTree = function(root) {
+  let count = 0
+  depth(root)
+  return count
+  function depth(root) {
+      if(!root) return 0
+      let left = depth(root.left)
+      let right = depth(root.right)
+      count = Math.max(count, left + right)
+      return Math.max(left, right) + 1
+  }
+};
