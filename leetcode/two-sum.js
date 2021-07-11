@@ -153,3 +153,25 @@ var numSubarraysWithSum = function(nums, goal) {
   return res;
 };
 // log(numSubarraysWithSum([1,0,1,0,1], 2))
+
+
+
+/**
+ * https://leetcode-cn.com/problems/h-index
+ * @param {number[]} citations
+ * @return {number}
+ */
+var hIndex = function(citations) {
+  // if(citations.length === 1) return !citations[0] ? 0 : 1
+  citations.sort((a, b) => b - a)
+  for(let i = 0; i < citations.length; i++) {
+    if(i >= citations[i])
+      return i
+  }
+  return Math.min(citations.length, Math.min(...citations))
+};
+// log(hIndex([3, 0, 6, 1, 5]))
+// log(hIndex([1, 2]))
+// log(hIndex([0]))
+// log(hIndex([1]))
+// log(hIndex([11, 15]))
