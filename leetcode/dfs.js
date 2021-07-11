@@ -70,3 +70,22 @@ var myPow = function(x, n) {
 // log(myPow(2,5))
 
 
+
+/**
+ * https://leetcode-cn.com/problems/subtree-of-another-tree/
+ * @param {TreeNode} root
+ * @param {TreeNode} subRoot
+ * @return {boolean}
+ */
+var isSubtree = function(root, subRoot) {
+  return dfs(root, subRoot)
+  function dfs(s, t) {
+    if(s === null) return false
+    return check(s, t) || dfs(s.left, t) || dfs(s.right, t)
+  }
+  function check(s, t) {
+    if(!s && !t) return true
+    if(!s || !t || s.val !== t.val) return false
+    return check(s.left, t.left) && check(s.right, t.right)
+  }
+};

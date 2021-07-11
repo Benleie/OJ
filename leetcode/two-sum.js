@@ -92,6 +92,8 @@ var intersect = function(nums1, nums2) {
   return res
 }; */
 
+
+
 // two-pointers
 var intersect = function(nums1, nums2) {
   nums1.sort((a, b) => a - b)
@@ -128,3 +130,26 @@ var findErrorNums = function(nums) {
   return arr
 };
 // log(findErrorNums([1,5,3,2,2,7,6,4,8,9]))
+
+
+
+
+/**
+ * https://leetcode-cn.com/problems/binary-subarrays-with-sum/
+ * @param {number[]} nums
+ * @param {number} goal
+ * @return {number}
+ */
+var numSubarraysWithSum = function(nums, goal) {
+  const map = new Map([[0,1]]);
+  let sum = 0,res = 0;
+  for(const num of nums){
+      sum += num;
+      if(map.has(sum-goal)){
+          res += map.get(sum-goal);
+      }
+      map.set(sum,(map.get(sum) || 0) + 1);
+  }
+  return res;
+};
+// log(numSubarraysWithSum([1,0,1,0,1], 2))
