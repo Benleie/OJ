@@ -175,3 +175,4 @@ var hIndex = function(citations) {
 // log(hIndex([0]))
 // log(hIndex([1]))
 // log(hIndex([11, 15]))
+

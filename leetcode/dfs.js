@@ -118,3 +118,25 @@ var averageOfLevels = function(root) {
   }
   return res;
 };
+
+
+
+/**
+ * https://leetcode-cn.com/problems/range-sum-of-bst/submissions/
+ * @param {TreeNode} root
+ * @param {number} low
+ * @param {number} high
+ * @return {number}
+ */
+// 二叉搜索树的中序遍历结果是有序的？？
+var rangeSumBST = function(root, low, high) {
+  let sum = 0
+  dfs(root)
+  return sum
+  function dfs(root) {
+      if(root === null) return
+      dfs(root.left)
+      if(root.val >= low && root.val <= high) sum += root.val
+      dfs(root.right)
+  }
+};
