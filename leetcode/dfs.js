@@ -186,3 +186,25 @@ var isCousins = function(root, x, y) {
   dfs(root, 0, null);
   return x_depth === y_depth && x_parent !== y_parent;
 };
+
+
+
+
+
+/**
+ * https://leetcode-cn.com/problems/leaf-similar-trees/submissions/
+ * @param {TreeNode} root1
+ * @param {TreeNode} root2
+ * @return {boolean}
+ */
+var leafSimilar = function(root1, root2) {
+  const res1 = []
+  const res2 = []
+  function getLeafs(root, res) {
+    if(!root) return ;
+    if(!root.left && !root.right) res.push(root.val)
+    getLeafs(root.left, res)
+    getLeafs(root.right, res)
+  }
+  return getLeafs(root1, res1) === getLeafs(root2, res2)
+};

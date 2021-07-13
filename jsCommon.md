@@ -107,7 +107,9 @@ set.clear()
  users.hasOwnProperty('Alan');
 'Alan' in users;
 // both return true
-
+// 只有引用自同一个对象时，才返回true
+[1,2,3] == [1,2,3]  // false 
+[1,2,3].toString() === [1,2,3].toString()  // true   
 ```
 ## 归纳
 + 数组浅拷贝的方法
