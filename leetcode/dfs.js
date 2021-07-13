@@ -206,5 +206,7 @@ var leafSimilar = function(root1, root2) {
     getLeafs(root.left, res)
     getLeafs(root.right, res)
   }
-  return getLeafs(root1, res1) === getLeafs(root2, res2)
+  getLeafs(root1, res1)
+  getLeafs(root2, res2)
+  return res1.toString() === res2.toString()
 };
