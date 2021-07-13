@@ -210,3 +210,30 @@ var leafSimilar = function(root1, root2) {
   getLeafs(root2, res2)
   return res1.toString() === res2.toString()
 };
+
+
+
+
+
+/**
+ * https://leetcode-cn.com/problems/flatten-binary-tree-to-linked-list/
+ * @param {TreeNode} root
+ * @return {void} Do not return anything, modify root in-place instead.
+ */
+var flatten = function(root) {
+  const list = []
+  preorderTraversal(root, list)
+  for(let i = 1; i < list.length; i++) {
+    const prev = list[i - 1], curr = list[i]
+    prev.left = null
+    prev.right = curr
+  }
+
+  function preorderTraversal(root, list) {
+    if(root !== null) {
+      list.push(root)
+      preorderTraversal(root.left, list)
+      preorderTraversal(root.right, list)
+    }
+  }
+};
