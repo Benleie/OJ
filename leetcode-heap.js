@@ -24,11 +24,12 @@ var largestRectangleArea = function(heights) {
   }
   return res
 };
-log(largestRectangleArea([2,1,5,6,2,3]))
-log(largestRectangleArea([2,1,2]))
-log(largestRectangleArea([1,1]))
-log(largestRectangleArea([1,5]))
-log(largestRectangleArea([5, 4, 1, 2]))
+// log(largestRectangleArea([2,1,5,6,2,3]))
+// log(largestRectangleArea([2,1,2]))
+// log(largestRectangleArea([1,1]))
+// log(largestRectangleArea([1,5]))
+// log(largestRectangleArea([5, 4, 1, 2]))
+
 
 
 
@@ -53,3 +54,30 @@ var findUnsortedSubarray = function(nums) {
 };
 // log(findUnsortedSubarray([2,6,4,8,10,9,15]))  // 5
 
+
+
+/**
+ * https://leetcode-cn.com/problems/maximum-binary-tree/
+ * @param {number[]} nums
+ * @return {TreeNode}
+ */
+var constructMaximumBinaryTree = function (nums) {
+  const BuildTree = (arr, left, right) => {
+      if (left > right)
+          return null;
+      let maxValue = -1;
+      let maxIndex = -1;
+      for (let i = left; i <= right; ++i) {
+          if (arr[i] > maxValue) {
+              maxValue = arr[i];
+              maxIndex = i;
+          }
+      }
+      let root = new TreeNode(maxValue);
+      root.left = BuildTree(arr, left, maxIndex - 1);
+      root.right = BuildTree(arr, maxIndex + 1, right);
+      return root;
+  }
+  let root = BuildTree(nums, 0, nums.length - 1);
+  return root;
+};
