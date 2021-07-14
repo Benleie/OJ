@@ -237,3 +237,25 @@ var flatten = function(root) {
     }
   }
 };
+
+
+
+
+/**
+ * https://leetcode-cn.com/problems/populating-next-right-pointers-in-each-node/submissions/
+ * @param {Node} root
+ * @return {Node}
+ */
+var connect = function(root) {
+    if(!root) return null
+    connectTwoNodes(root.left, root.right)
+    return root
+
+    function connectTwoNodes(node1, node2) {
+      if(!node1 || !node2) return;
+      node1.next = node2
+      connectTwoNodes(node1.left, node1.right)
+      connectTwoNodes(node2.left, node2.right)
+      connectTwoNodes(node1.right, node2.left)
+    }
+};
