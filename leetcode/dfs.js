@@ -308,3 +308,32 @@ const buildTree = (preorder, inorder) => {
   };
   return helper(0, preorder.length - 1, 0, inorder.length - 1);
 }; */
+
+
+
+
+/**
+ * https://leetcode-cn.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/
+ * @param {number[]} inorder
+ * @param {number[]} postorder
+ * @return {TreeNode}
+ */
+// 如何确定根节点或者说父节点 之前是前序遍历非常方便
+ // 后序遍历 后面最后一个就是根节点 这是个特性 抓住了
+ // 我们根据这个根节点 分割出左右子树
+ // 中序遍历的左右子树 根据中序的左右子树的数量 分割出后序遍历的左右子树
+ // 中序遍历确定左右子树  后序遍历确定根节点
+ 
+var buildTree = function(inorder, postorder) {
+  if(!inorder.length){return null}
+  const rootVal = postorder.pop()
+  let root = new TreeNode(rootVal)
+  let mid = inorder.indexOf(rootVal)
+  const iLArray = inorder.slice(0,mid) // 中序遍历的左子树
+  const pLArray = postorder.slice(0,iLArray.length) // 后序遍历的左子树
+  root.left = buildTree(iLArray,pLArray)
+  const iRArray = inorder.slice(mid+1) // // 中序遍历的右子树
+  const pRArray = postorder.slice(iLArray.length,iLArray.length+iRArray.length) // 后序遍历的右子树
+  root.right=buildTree(iRArray,pRArray)
+  return root
+};
