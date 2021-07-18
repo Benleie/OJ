@@ -1,4 +1,4 @@
-# 
+-- https://github.com/mrinal1704/SQL-Leetcode-Challenge
 
 SELECT DISTINCT
     Salary AS SecondHighestSalary
